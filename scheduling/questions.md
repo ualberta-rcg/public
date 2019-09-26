@@ -123,3 +123,10 @@
      * What is the array ID of this job? 
        * *Hint:* `echo $SLURM_ARRAY_TASK_ID`
        * *Hint:* in this case there is none.
+   - **Optional for advanced Unix users:** 
+     * List the jobs cpuset/cgroup. A cpuset or cgroup is used to assigning a set of processor and memory to a set of hardware resources, and can be used by the scheduling system to keep a job from using resources assigned to other jobs.
+       * *Hint:* `ls /sys/fs/cgroup/cpuset/slurm/uid_$SLURM_JOB_UID/job_$SLURM_JOB_ID/step_$SLURM_STEPID`
+     * Show which cores and which memory set that your job is running on?
+       * *HINT:* `cat /sys/fs/cgroup/cpuset/slurm/uid_$SLURM_JOB_UID/job_$SLURM_JOB_ID/step_$SLURM_STEPID/cpuset.cpus`
+       * *HINT:* `cat /sys/fs/cgroup/cpuset/slurm/uid_$SLURM_JOB_UID/job_$SLURM_JOB_ID/step_$SLURM_STEPID/ cpuset.mems`
+    - Close the interactive shell by running the exit command or typing ^D (control d)  
