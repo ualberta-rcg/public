@@ -46,8 +46,8 @@
      * **Runs the non existent command ‘hello’**
    - Make a note of the jobid when your job is submitted
    - Watch your job run with the following command: 
-     * `squeue -u $USER`
-     * `sscontrol show job <jobid>`
+      `squeue -u $USER`
+      `sscontrol show job <jobid>`
    - Did you get the result emailed to your account
    - Display the job output and error files. 
    - Examine the emails you have received.
