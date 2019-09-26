@@ -95,13 +95,20 @@
      * Look at the command line you are on. 
      * Which node are you on?
        * *Hint:* `hostname`
-     * Print and look at all the slurm variables: 
+     * Print and look at all the slurm variables
        * *Hint:* `printenv | grep SLURM`
-       * *Hint:* `printenv | grep SLURM`
-       * *Hint:* `printenv | grep SLURM`
-       * *Hint:* `printenv | grep SLURM`
-       * *Hint:* `printenv | grep SLURM`
-       * *Hint:* `printenv | grep SLURM`
+     * Find out on which node is your job allocated
+       * *Hint:* `echo $SLURM_NODELIST`
+       * *Hint:* `hostname`      
+     * What is the jobs name?
+       * *Hint:* `echo $SLURM_JOB_NAME`
+     * In which directory are you? 
+       * *Hint:* `pwd`
+     * Which directory has the job been submitted from?
+       * *Hint:* `echo $SLURM_SUBMIT_DIR`
+     * What is the path to executable for this job?
+       * *Hint:* `echo $PATH`
+     
        * *Hint:* `printenv | grep SLURM`
        * *Hint:* `printenv | grep SLURM`
        * *Hint:* `printenv | grep SLURM`
