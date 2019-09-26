@@ -12,7 +12,7 @@
      * Runs the ‘hostname’ command
    - Make a note of the jobid when your job is submitted
    - Watch your job run with the following command:
-     * `squeue -u $USER`
+     `squeue -u $USER`
    - Did you get the result emailed to your accoun
    - Display the job output file.
    - Examine the emails you have received.  
