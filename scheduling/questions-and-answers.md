@@ -83,7 +83,7 @@
    - Examine the emails you have recieved
    - Display the job output and error files. 
   
-6. Interactive serial Job
+6. Interactive, serial Job
    - Open a second ssh session/terminal to the workshop cluster
    - In the second ssh session submit a job that: 
      * Is a serial (1 core) job
