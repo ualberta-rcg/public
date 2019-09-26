@@ -25,7 +25,7 @@
      * Has a maximum wall time of 2 minutes
      * Writes the standard output and standard error into separate files.
      * Runs the ‘hostname’ command
-     * ***Sleeps for 30 seconds***
+     * **Sleeps for 30 seconds**
    - Writes the standard output and standard error into separate files.
    - Make a note of the jobid when your job is submitted
    - Watch your job run with the following command:
@@ -35,14 +35,15 @@
    - Display the job output file.
    - Examine the emails you have received.
 
-1. Serial Job - error
+
+1. Serial Job, error
    - Submit a serial job that:
      * Is a serial (1 core) job 
      * Emails you when is starts, ends and aborts
      * Has a maximum wall time of 2 minute
      * Runs the ‘hostname’ command
      * Writes the standard output and standard error into separate files.
-     * ***Runs the non existent command ‘hello’***
+     * **Runs the non existent command ‘hello’**
    - Make a note of the jobid when your job is submitted
    - Watch your job run with the following command: 
      * “squeue -u $USER”
@@ -50,5 +51,20 @@
    - Did you get the result emailed to your account
    - Display the job output and error files. 
    - Examine the emails you have received.
-
-
+ 
+1. Serial Job, Walltime
+    - Submit a serial job that:
+      * Is a serial (1 core) job 
+      * Emails you when is starts, ends and aborts
+      * **Has a maximum wall time of 2 minutes**
+      * Runs the ‘hostname’ command
+      * Writes the standard output and standard error into separate files.
+      * **Sleeps for 200 seconds**
+   - Think about what will you think happen when this jobs runs?
+   - Make a note of the jobid when your job is submitted 
+   - Watch your job run with the following commands:
+      * “squeue -u $USER”
+      * “scontrol show job <jobid>”
+   - Examine the job output and error files.
+   - Examine the emails you have recieved
+   - Display the job output and error files. 
