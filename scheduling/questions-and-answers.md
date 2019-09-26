@@ -16,6 +16,7 @@
    - Did you get the result emailed to your accoun
    - Display the job output file.
    - Examine the emails you have received.  
+     
 1. Serial Job, output
    - Submit a serial job that: 
      * Is a serial (1 core) job 
