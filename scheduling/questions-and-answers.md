@@ -1,8 +1,6 @@
-# Questions and Answers
+# Questions 
 
-## General
-
-### Questions
+## Serial Jobs 
 
 1. Serial Job, basic
    - Submit a serial job that:
@@ -96,5 +94,4 @@
    - Wait for the job to be allocated after it is allocated answer the following questions
      * Look at the command line you are on. 
      * Which node are you on? *hostname*
-     * Print and look at all the slurm variables. `printenv | grep SLURM`
-
+     * Print and look at all the slurm variables: `printenv | grep SLURM`
