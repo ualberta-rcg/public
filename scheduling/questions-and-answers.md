@@ -12,7 +12,7 @@
      * Runs the ‘hostname’ command
    - Make a note of the jobid when your job is submitted
    - Watch your job run with the following command:
-     * squeue -u $USER
+     * `squeue -u $USER`
    - Did you get the result emailed to your accoun
    - Display the job output file.
    - Examine the emails you have received.  
@@ -29,8 +29,8 @@
    - Writes the standard output and standard error into separate files.
    - Make a note of the jobid when your job is submitted
    - Watch your job run with the following command:
-     * squeue -u $USER
-     * scontrol show job <jobid>
+     * `squeue -u $USER`
+     * `scontrol show job <jobid>`
    - Did you get the result emailed to your account
    - Display the job output file.
    - Examine the emails you have received.
@@ -46,8 +46,8 @@
      * **Runs the non existent command ‘hello’**
    - Make a note of the jobid when your job is submitted
    - Watch your job run with the following command: 
-     * “squeue -u $USER”
-     * “sscontrol show job <jobid>””
+     * `squeue -u $USER`
+     * `sscontrol show job <jobid>`
    - Did you get the result emailed to your account
    - Display the job output and error files. 
    - Examine the emails you have received.
@@ -63,8 +63,8 @@
    - Think about what will you think happen when this jobs runs?
    - Make a note of the jobid when your job is submitted 
    - Watch your job run with the following commands:
-      * “squeue -u $USER”
-      * “scontrol show job <jobid>”
+      * `squeue -u $USER`
+      * `scontrol show job <jobid>`
    - Examine the job output and error files.
    - Examine the emails you have recieved
    - Display the job output and error files. 
