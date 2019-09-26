@@ -108,10 +108,18 @@
        * *Hint:* `echo $SLURM_SUBMIT_DIR`
      * What is the path to executable for this job?
        * *Hint:* `echo $PATH`
-     
-       * *Hint:* `printenv | grep SLURM`
-       * *Hint:* `printenv | grep SLURM`
-       * *Hint:* `printenv | grep SLURM`
-       * *Hint:* `printenv | grep SLURM`
-       * *Hint:* `printenv | grep SLURM`
-       * *Hint:* `printenv | grep SLURM`
+   - The current interactive job only uses 1 process, on 1 core, inside 1 task, inside 1 step, and does not use arrays but for future comparison with other more complex job types run the following commands and write down the results 
+     * Give a list of node names where each process (there is only one in this case) of this job runs? 
+       * *Hint:* `echo $SLURM_JOB_NODELIST`
+     * On how many nodes (there is only one in this case) does this job run?
+       * *Hint:* `echo $SLURM_JOB_NUM_NODES`
+       * *Hint:* `echo $SLURM_NNODES`
+     * What is the total number of tasks in this allocation
+       * *Hint:* `echo $SLURM_NTASKS`
+     * What is the number of tasks per node (listed by node)
+       * *Hint:* `echo $SLURM_TASKS_PER_NODE`
+     * How many steps are in this job
+       * *Hint:* `echo $SLURM_ SLURM_STEPID`
+     * What is the array ID of this job? 
+       * *Hint:* `echo $SLURM_ARRAY_TASK_ID`
+       * *Hint:* in this case there is none.
