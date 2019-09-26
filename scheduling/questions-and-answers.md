@@ -93,5 +93,6 @@
      * Is interactive
    - Wait for the job to be allocated after it is allocated answer the following questions
      * Look at the command line you are on. 
-     * Which node are you on? *hostname*
+     * Which node are you on? 
+       * `hostname`
      * Print and look at all the slurm variables: `printenv | grep SLURM`
