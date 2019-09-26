@@ -1,7 +1,5 @@
 # Questions 
 
-## Serial Jobs 
-
 1. Serial Job, basic
    - Submit a serial job that:
      * Is a serial (1 core) job 
