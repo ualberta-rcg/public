@@ -358,7 +358,7 @@
    - Runs the command scontrol showjob
    
 22.	Software licenses and generic resources 
-   - Currently not implemented on 
+   - Currently not implemented on cluster
 
 23. Submit a job asking for that asks for:
    - 2 tasks
