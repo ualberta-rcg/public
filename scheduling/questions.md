@@ -137,8 +137,8 @@
      * Runs the command “hostname”
      * Is named “my-array-job”
      * **Has 12 tasks**
-     * **Writes a output file to: q7-<jobid>-<arrayid>.out**
-     * **Writes a error file to: q7-<jobid>-<arrayid>.err**
+     * **Writes a output file to: q7-\<jobid>-\<arrayid>.out**
+     * **Writes a error file to: q7-\<jobid>-\<arrayid>.err**
    - Run the following commands to see your job running 
      * `squeue –u $USER`
      * `scontrol show job <jobid>`
