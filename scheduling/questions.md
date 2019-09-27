@@ -151,8 +151,8 @@
      * Runs the command “hostname”
      * Is named “my-array-job2”
      * Has 12 tasks**
-     * Writes a output file to: q8-<arrayid>.out
-     * Writes a error file to: q8-<arrayid>.err
+     * Writes a output file to: q8-\<arrayid>.out
+     * Writes a error file to: q8-\<arrayid>.err
      * **Runs at most 2 jobs at once** 
    - Run the following commands to see your job running 
      * `squeue –u $USER`
@@ -166,8 +166,8 @@
      * Runs the command “hostname”
      * Is named “my-array-job3”
      * Has 4 tasks with indexes of: 1, 2, 7, 13
-     * Writes a output file to: q9-<arrayid>.out
-     * Writes a error file to: q9-<arrayid>.err
+     * Writes a output file to: q9-\<arrayid>.out
+     * Writes a error file to: q9-\<arrayid>.err
      * **Runs at most 2 jobs at once** 
    - Run the following commands to see your job running 
      * `squeue –u $USER`
