@@ -209,6 +209,9 @@
    - As advanced work if time permits see if you can output in a single file as opposed to many array files.
               
 12. MPI Jobs
+   - Compile the mpisample code
+     * `module load gcc/6.4.0` 
+     * `mpif90 -o mpisample mpisample.f90 -O0` 
    - Submit the start-mpi.sh  job 
    - Look at the job with the following commands:
      * `squeue –u $USER`
