@@ -43,7 +43,7 @@
    - Make a note of the jobid when your job is submitted
    - Watch your job run with the following command: 
       * `squeue -u $USER`
-      * `sscontrol show job <jobid>`
+      * `scontrol show job <jobid>`
    - Did you get the result emailed to your account
    - Display the job output and error files. 
    - Examine the emails you have received.
@@ -344,9 +344,9 @@
    - Did your job run successfully? Or fail because of a lack of memory? 
    - If your job failed due to a lack of memory, increase the maximum memory requested and resubmit your job
    - Look at the email reporting on your job success, how much resources were reported used. Compare the memory used to the reported memory in point 
-   - while the job is running attach to the job with teh following command 
+   - while the job is running attach to the job with the following command 
      * `srun --jobid <jobid> --pty  bash`
-     * then run top and see how much resources cryptic is useing. 
+     * then run top and see how much resources cryptic is using. 
      * exit with the exit command 
    - Once you know the apropreate memory needed edit job script and request an appropriate amount of memory to run the Job .
    - Submit your new job
