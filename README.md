@@ -35,5 +35,5 @@ Using HPC resources is a challenging topic to a new user and best practices or w
 1. Demo the IO querying commands: df, lsof -p,lsof -u,quota,dstat,IOstat, Htop
 1. Demo some advanced diagnostics: sar, perf 
 1. (Advanced) You need to be on the same node/server as your running program to debug it. By running interactively we can debug your program by running a debugger. This is mostly beyond the scope of the session and can be its own workshop. (To do put simple instruction on how to demo running a debugger).
-1.Demo `netstat` network diagnosis tool. 
+1. Demo `netstat` network diagnosis tool. 
 
