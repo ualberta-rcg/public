@@ -27,7 +27,7 @@ Using HPC resources is a challenging topic to a new user and best practices or w
 1. Make a note of the job id:  `echo $SLURM_JOB_UID`, open the other window we are logged on in the cluster and attach to the job `srun --jobid=<jobid> --pty bash` verify that we are in the same node the job `echo $SLURM_JOB_UID`, `hostname` run the `top` command
 
 1. Octave is a free version a Matlab like modelling tool used by many researchers and Engineers,interactively.  Let's load it in the original session first load the environment: `module spider octave`, `module load nixpkgs/16.09` ,`module load gcc/5.4.0`,`module load intel/2017.1`,`module load octave/4.2.1`
-1. The start octave `octave` we will create a couple of vectors and plot them `a=[0:0.5:5]`, `b=2*a.^2+ 6*a`, `plot(a,b) ` if you have graphics (X11) forwarded on you will see a graph window pop up otherwise it will be shown in the text window.  
+1. Start octave `octave` we will create a couple of vectors and plot them `a=[0:0.5:5]`, `b=2*a.^2+ 6*a`, `plot(a,b) ` if you have graphics (X11) forwarded on you will see a graph window pop up otherwise it will be shown in the text window.  
 1. Now we will create 2 very large vectors and do some simple math on them, and switch to the other window running top to see the memory being allocated and the computations take place. 
 
 1. If we were using a GPU we could replace top with "watch -n 0.5 nvidia-smi" to look at GPU statistics
