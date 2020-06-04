@@ -37,3 +37,9 @@ Using HPC resources is a challenging topic to a new user and best practices or w
 1. (Advanced) You need to be on the same node/server as your running program to debug it. By running interactively we can debug your program by running a debugger. This is mostly beyond the scope of the session and can be its own workshop. (To do put simple instruction on how to demo running a debugger).
 1. Demo `netstat` network diagnosis tool. 
 
+1. Have the participants download the cryptic program `wget https://github.com/ualberta-rcg/public/raw/master/Create%20HPC-Tuning/cryptic` make it exacutable `chmod 700 ./cryptic ` run the program interactivly and figure out how much memory this program requires. 
+
+1. To Do: Create more exaples like cryptic  
+1. To Do: Create a example that does a lot of IO and  small amount of compute. 
+1. To Do: Create a GPU example:"
+
