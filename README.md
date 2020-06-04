@@ -41,5 +41,5 @@ Using HPC resources is a challenging topic to a new user and best practices or w
 
 1. To Do: Create more exaples like cryptic  
 1. To Do: Create a example that does a lot of IO and  small amount of compute. 
-1. To Do: Create a GPU example:"
+1. To Do: Create a GPU example
 
