@@ -1,0 +1,61 @@
+heat_template_version: 2015-04-30
+
+description: A template to deploy a Nginx based web service 
+
+resources:
+  # Name of the resource 
+  nginx_tetris:
+    # Create a Nova instance
+    type: OS::Nova::Server
+    
+    properties:
+      key_name: heat_key
+      image: CentOS-7-x64-2019-07
+      flavor: p4-6gb 
+      networks:
+        - network: erming-net-1 
+      security_groups:
+        - default
+        - Web services
+
+      # Insert user scripts including parameters 
+      user_data: |
+            #!/bin/bash -x
+            
+            # Add a nginx repository for yum
+            cat <<EOF > /etc/yum.repos.d/nginx.repo
+            [nginx]
+            name=nginx repo
+            baseurl=https://nginx.org/packages/centos/\$releasever/\$basearch/
+            gpgcheck=0
+            enabled=1
+            EOF
+
+            # Install packages
+            sudo yum -y install vim git nginx
+
+            # Enable Nginx when system starts
+            sudo systemctl enable nginx
+
+            # Start the Nginx
+            sudo systemctl start nginx
+
+  # Allocate a floating IP from specified network
+  floating_ip:
+    type: OS::Neutron::FloatingIP
+    properties:
+      floating_network: Public-Network
+
+  # Associate the floating IP with the instance 
+  server_fip_association:
+    type: OS::Nova::FloatingIPAssociation
+    properties:
+      floating_ip: { get_resource: floating_ip }
+      server_id: { get_resource: nginx_tetris }
+
+ 
+# Specify and retrieve outputs
+outputs:
+  server_ip:
+    description: Floating IP assigned to the server
+    value: { get_attr: [ floating_ip, floating_ip_address ]}
