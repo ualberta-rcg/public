@@ -1,0 +1,17 @@
+heat_template_version: 2015-04-30
+
+description: A simple template to deploy a basic instance
+
+resources:
+  my_instance:
+    type: OS::Nova::Server
+    properties:
+      key_name: heat_key
+      image: CentOS-7-x64-2019-07
+      flavor: p1-1.5gb 
+      networks:
+        - network: erming-net-1 
+      security_groups:
+        - default
+
+
