@@ -10,4 +10,4 @@
 
 ### Setting up SSH on you computer for HPC cluster workshops
 
-Please refer to this document: https://hpc-carpentry.github.io/hpc-intro/setup.html
+Please refer to this document: <https://hpc-carpentry.github.io/hpc-intro/setup.html>
