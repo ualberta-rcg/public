@@ -7,7 +7,7 @@
 
 ### Cloud workshops
 * [Cloud Hands On](cloud-bootcamp/Cloud_Hands_On)
-* [Advanced Cloud](cloud-bootcamp/Cloud_Advanced)
+* [Cloud Advanced](cloud-bootcamp/Cloud_Advanced)
 
 ### Setting up SSH on you computer for HPC cluster workshops
 
