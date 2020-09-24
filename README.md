@@ -6,9 +6,10 @@
 * [Scheduling](scheduling)
 
 ### Cloud workshops
+* [Cloud Intro](cloud-bootcamp/Cloud_Intro)
 * [Cloud Hands On](cloud-bootcamp/Cloud_Hands_On)
 * [Cloud Advanced](cloud-bootcamp/Cloud_Advanced)
 
-### Setting up SSH on you computer for HPC cluster workshops
+### Setting up SSH on your computer for HPC cluster workshops
 
 Please refer to this document: <https://hpc-carpentry.github.io/hpc-intro/setup.html>
