@@ -3,6 +3,7 @@
 ### HPC cluster workshops
 * [HPC Tuning and Debugging](HPC-Tuning)
 * [HPC Essentials](hpc-essentials)
+* [HPC Parallelism](https://docs.google.com/presentation/d/1sLeLLBLYcq1ye530QDOAidQYPSGE80LVzT7MU0XnYJc/edit?usp=sharing)
 * [Scheduling](scheduling)
 
 ### Cloud workshops
