@@ -104,7 +104,7 @@ In order to run Openstack Heat, we need to set up the computing environment firs
     
     `openstack stack update -t nginx_tetris.yaml myFirstStack`
     
-    Note: The above two yaml files can be found on github under `/cloud-bootcamp/Cloud_Advanced` .
+    Note: The above two yaml files can be found on github under `public/cloud-bootcamp/Cloud_Advanced` .
 
     
 12. Other Heat (or stack) operations:
