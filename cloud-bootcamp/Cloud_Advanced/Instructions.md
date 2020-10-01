@@ -79,9 +79,9 @@ In order to run Openstack Heat, we need to set up the computing environment firs
     
     `openstack stack OPERATION OPTION STACK_NAME`
     
-    For example:
+    Example 1:
     
-    `openstack stack create -t ~/simplest.sh simplest`
+    `openstack stack create -t ~/simplest.sh myFirstStack`
      
 10. Check the stack status:
     
@@ -96,6 +96,17 @@ In order to run Openstack Heat, we need to set up the computing environment firs
   
     `openstack stack update -t HEAT_TEMPLATE STACK_NAME`
     
+    Example 2:
+    
+    `openstack stack update -t nginx.yaml myFirstStack`
+    
+    Example 3:
+    
+    `openstack stack update -t nginx_tetris.yaml myFirstStack`
+    
+    Note: The above two yaml files can be found on github under `/cloud-bootcamp/Cloud_Advanced` .
+
+    
 12. Other Heat (or stack) operations:
   
     ```
@@ -107,8 +118,7 @@ In order to run Openstack Heat, we need to set up the computing environment firs
     openstack stack delete STACK_NAME
      
     ```
-    
-    
+
 
 
 
