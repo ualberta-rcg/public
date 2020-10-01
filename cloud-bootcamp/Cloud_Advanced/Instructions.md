@@ -6,11 +6,26 @@ Preparation:
 
 In order to run Openstack Heat, we need to set up the computing environment first including python/PIP, Openstack client and Heat client.
 
-1. Install python and PIP
+1. Install python and pip (Note: pip is a plugin of python. Once you get python installed, you will be able to use pip).
 
-  - On Linux :
+  - On CentOS Linux :
 
     `yum install python3`
+    
+  - On Ubuntu:
+   
+    `apt-get update`
+    `apt-get install python3`
+    
+  - On Mac OS:
+  
+    `brew install python3`
+    
+    If you don't have brew installed, you may do it now with running:
+    
+    `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"`
+
+  - On Windows, you need a termial with ssh client installed, or I will guide you to use the web based options so you can skip the python/etc installations.
 
 
 2. Use PIP to install python-openstackclient and python-heatclient
