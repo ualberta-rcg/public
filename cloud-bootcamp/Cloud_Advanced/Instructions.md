@@ -1,7 +1,9 @@
 Description: The Cloud Advanced session is a variable session that aims to accommodate different topics of advanced cloud technologies & applications, including Openstack Heat, Dokku, HPC on cloud, etc. In this bootcamp, we will demonstrate how to use Openstack Heat to rapidly deploy cloud services and applications (e.g. create a service stack for hosting a Nginx based web service).
+
 Note: The following instruction is based on CentOS Linux. To be updated for other OSes/flavors.
 
 Preparation:
+
 In order to run Openstack Heat, we need to set up the computing environment first including python/PIP, Openstack client and Heat client.
 
 1. Install python and PIP
