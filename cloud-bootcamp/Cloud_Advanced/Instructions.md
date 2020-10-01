@@ -47,7 +47,13 @@ In order to run Openstack Heat, we need to set up the computing environment firs
    openstack stack list
    ```
    
-7. Create your first Heat template, e.g.:
+7. Create a key pair for Heat
+   ```
+   openstack keypair create heat_keypair > heat_key.priv
+   chmod 400 heat_key.priv
+   ```
+   
+8. Create your first Heat template, e.g.:
    ```
    heat_template_version: 2015-04-30
 
@@ -67,7 +73,7 @@ In order to run Openstack Heat, we need to set up the computing environment firs
    ```
    Save it as a file with extension .yaml (e.g.: ~/simplest.sh)
    
- 8. Create your first stack with the template:
+ 9. Create your first stack with the template:
  
     Syntax:
     
@@ -77,7 +83,7 @@ In order to run Openstack Heat, we need to set up the computing environment firs
     
     `openstack stack create -t ~/simplest.sh simplest`
      
- 9. Check the stack status:
+10. Check the stack status:
     
     `openstack stack show simplest`
     
@@ -86,11 +92,11 @@ In order to run Openstack Heat, we need to set up the computing environment firs
     `opensteack stack resource list`
     `openstack stack resource show STACK_NAME RESOURCE_NAME`
     
-10. To update a stack after applied some changes to the template:
+11. To update a stack after applied some changes to the template:
   
     `openstack stack update -t HEAT_TEMPLATE STACK_NAME`
     
-11. Other Heat (or stack) operations:
+12. Other Heat (or stack) operations:
   
     ```
     # To suspend a stack
