@@ -15,6 +15,7 @@ In order to run Openstack Heat, we need to set up the computing environment firs
   - On Ubuntu:
    
     `apt-get update`
+    
     `apt-get install python3`
     
   - On Mac OS:
