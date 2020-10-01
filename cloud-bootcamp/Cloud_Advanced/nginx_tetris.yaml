@@ -5,18 +5,18 @@ description: A template to deploy a Nginx based web service
 resources:
   # Name of the resource 
   nginx_tetris:
-    # Create a Nova instance
+    # Create a Nova instance. Note: You need to change the following properties according to your own environment and needs.
     type: OS::Nova::Server
     
     properties:
-      key_name: heat_key
+      key_name: heat_keypair
       image: CentOS-7-x64-2019-07
       flavor: p4-6gb 
       networks:
         - network: erming-net-1 
       security_groups:
         - default
-        - Web services
+        - web-ssh
 
       # Insert user scripts including parameters 
       user_data:
