@@ -4,7 +4,7 @@ https://docs.google.com/presentation/d/1Ov5o5utDmlY2-BGHdavChk9GBFHkmIFV1DKskUvy
 
 Instruction:
 
-* [Cloud Advanced Instruction](cloud-bootcamp/Cloud_Advanced/Instructions.md)
+* [Cloud Advanced Instruction](Instructions.md)
 
 
 
