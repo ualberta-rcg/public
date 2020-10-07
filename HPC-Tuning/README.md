@@ -30,7 +30,7 @@ Using HPC resources is a challenging topic to a new user and best practices or w
 1. Start octave `octave` we will create a couple of vectors and plot them `a=[0:0.5:5]`, `b=2*a.^2+ 6*a`, `plot(a,b) ` if you have graphics (X11) forwarded on you will see a graph window pop up otherwise it will be shown in the text window.  
 1. Now we will create 2 very large vectors and do some simple math on them, and switch to the other window running top to see the memory being allocated and the computations take place. `d=[0:1:10000000];`, `d(1:20)`,`e=[0:1:10000000];`, `f= e.* d;`,`f(1:20)` 
 
-1. Demo grabing a gpu on a Compute Canada cluster. use "watch -n 0.5 nvidia-smi" instead of top to look at GPU statistics
+1. Demo grabing a gpu on a Compute Canada cluster. Use "watch -n 0.5 nvidia-smi" instead of or in addition to top to look at GPU statistics
 
 1. Demo the IO querying commands: df, lsof -p,lsof -u,quota,dstat,IOstat, Htop
 1. Demo some advanced diagnostics: sar, perf 
