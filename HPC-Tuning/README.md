@@ -22,15 +22,15 @@ Using HPC resources is a challenging topic to a new user and best practices or w
 1. Lets us run an interactive job asking for 5000MB of memory `salloc --mem=5000`. If the job will not run because of memory, check memory availability by running `sinfo -o :%N %m"` iteractivly run requesting all the memory on the node. Check how much memory can we use now. `printenv | grep -i slurm | grep -i mem` now shows an environment variable `SLURM_MEM_PER_NODE` or querying slurm `squeue -u $USER` shows allocated memory.
  
 1. Demo of processes and the commands to look at them: (ps, pstree, top htop).
-1. Demo of putting a process into foreground and background: (fg,bg,jobs,&) 
+1. Demo of putting a process into foreground and background and nohup: (fg,bg,jobs,&,nohup) 
 1. Demo of looking at the memory: (free, top, htop,/proc/meminfo) 
 1. Make a note of the job id:  `echo $SLURM_JOB_UID`, open the other window we are logged on in the cluster and attach to the job `srun --jobid=<jobid> --pty bash` verify that we are in the same node the job `echo $SLURM_JOB_UID`, `hostname` run the `top` command
 
 1. Octave is a free version a Matlab like modelling tool used by many researchers and Engineers,interactively.  Let's load it in the original session first load the environment: `module spider octave`, `module load nixpkgs/16.09` ,`module load gcc/5.4.0`,`module load intel/2017.1`,`module load octave/4.2.1`
 1. Start octave `octave` we will create a couple of vectors and plot them `a=[0:0.5:5]`, `b=2*a.^2+ 6*a`, `plot(a,b) ` if you have graphics (X11) forwarded on you will see a graph window pop up otherwise it will be shown in the text window.  
-1. Now we will create 2 very large vectors and do some simple math on them, and switch to the other window running top to see the memory being allocated and the computations take place. 
+1. Now we will create 2 very large vectors and do some simple math on them, and switch to the other window running top to see the memory being allocated and the computations take place. `d=[0:1:10000000];`, `d(1:20)`,`e=[0:1:10000000];`, `f= e.* d;`,`f(1:20)` 
 
-1. If we were using a GPU we could replace top with "watch -n 0.5 nvidia-smi" to look at GPU statistics
+1. Demo grabing a gpu on a Compute Canada cluster. use "watch -n 0.5 nvidia-smi" instead of top to look at GPU statistics
 
 1. Demo the IO querying commands: df, lsof -p,lsof -u,quota,dstat,IOstat, Htop
 1. Demo some advanced diagnostics: sar, perf 
