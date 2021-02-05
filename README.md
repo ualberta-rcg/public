@@ -9,6 +9,7 @@
 ### Cloud workshops
 * [Cloud Intro](cloud-bootcamp/Cloud_Intro)
 * [Cloud Hands On](cloud-bootcamp/Cloud_Hands_On)
+* [Cloud Storage](cloud-bootcamp/cloud_storage)
 * [Cloud Advanced](cloud-bootcamp/Cloud_Advanced)
 
 ### Setting up SSH on your computer for HPC cluster workshops
