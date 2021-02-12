@@ -67,7 +67,7 @@ In order to run Openstack Heat, we need to set up the computing environment firs
    
 7. Create a key pair for Heat
    ```
-   openstack keypair create heat_keypair > heat_key.priv
+   openstack keypair create guest5XX_keypair > heat_key.priv
    chmod 400 heat_key.priv
    ```
    
@@ -78,18 +78,18 @@ In order to run Openstack Heat, we need to set up the computing environment firs
    description: A simple template to deploy a basic instance
 
    resources:
-     my_instance:
+     guest5xx_vm:  # Resource name. Replace it with your guest account name, or any random name
        type: OS::Nova::Server
        properties:
-         key_name: heat_key
-         image: CentOS-7-x64-2019-07
+         key_name: guest5xx_keypair   # Your key pair name 
+         image: CentOS-7-x64-2020-03
          flavor: p1-1.5gb 
          networks:
-           - network: erming-net-1 
+           - network: def-training-cloudbootcamp-network 
          security_groups:
            - default
    ```
-   Save it as a file with extension .yaml (e.g.: ~/simplest.sh)
+   Save it as a file with extension .yaml (e.g.: ~/simple.yaml)
    
  9. Create your first stack with the template:
  
@@ -99,11 +99,11 @@ In order to run Openstack Heat, we need to set up the computing environment firs
     
     Example 1:
     
-    `openstack stack create -t ~/simplest.sh myFirstStack`
+    `openstack stack create -t ~/simple.yaml guest500_stack`
      
 10. Check the stack status:
     
-    `openstack stack show simplest`
+    `openstack stack show guest500_stack`
     
     You can also check a certain `resource` in the stack:
     
@@ -116,13 +116,13 @@ In order to run Openstack Heat, we need to set up the computing environment firs
     
     Example 2:
     
-    `openstack stack update -t nginx.yaml myFirstStack`
+    `openstack stack update -t nginx.yaml guest500_stack`
     
     Example 3:
     
-    `openstack stack update -t nginx_tetris.yaml myFirstStack`
+    `openstack stack update -t nginx_tetris.yaml guest500_stack`
     
-    Note: The above two yaml files can be found on github under `public/cloud-bootcamp/Cloud_Advanced` .
+    Note: The above yaml files can be found on github under `public/cloud-bootcamp/Cloud_Advanced` .
 
     
 12. Other Heat (or stack) operations:
