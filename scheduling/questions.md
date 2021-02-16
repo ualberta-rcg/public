@@ -81,7 +81,10 @@
    - Examine the emails you have recieved
    - Display the job output and error files. 
   
-6. Interactive, serial Job
+6. Job environment variables. 
+   - Submit a serial job that prints the partition(s) that the job was ran in
+
+7. Interactive, serial Job
    - Open a second ssh session/terminal to the workshop cluster
    - In the second ssh session submit a job that: 
      * Is a serial (1 core) job
@@ -129,7 +132,48 @@
        * *HINT:* `cat /sys/fs/cgroup/cpuset/slurm/uid_$SLURM_JOB_UID/job_$SLURM_JOB_ID/step_$SLURM_STEPID/ cpuset.mems`
     - Close the interactive shell by running the exit command or typing ^D (control d)
 
-      
+8. Jobs and memory  (appropriate resources)
+   - Create a job run the “cryptic” program edit the start-mem2.sh
+   - Make sure your job emails you when is starts, ends and aborts
+   - Make a guess and for enough RAM to run the program 
+   - Submit your edited Job script , look at your running Job with the following commands, look at the ,memory used by your job
+     * `squeue –u $USER`
+     * `scontrol show job -dd <jobid>`
+   - Did your job run successfully? Or fail because of a lack of memory? 
+   - If your job failed due to a lack of memory, increase the maximum memory requested and resubmit your job
+   - Look at the email reporting on your job success, how much resources were reported used. Compare the memory used to the reported memory in point 
+   - while the job is running attach to the job with the following command 
+     * `srun --jobid <jobid> --pty  bash`
+     * then run top and see how much resources cryptic is using. 
+     * exit with the exit command 
+   - Once you know the apropreate memory needed edit job script and request an appropriate amount of memory to run the Job .
+   - Submit your new job
+   - Verify that the jobs runs successfully. 
+
+9. Job using temporary directory 
+   - Submit a job that runs in the temporary directory used no more than 1GB of space.
+
+10. Job dependencies 
+   - Submit a serial job named dep1, that has:
+     * Walltime of 2:00 
+     * Sleeps 120 seconds
+     * Submit a serial job dep2 waits until job dep1 is done
+     * Walltime of 2:00 
+     * Sleeps 120 seconds
+   - Look at job dep2 with “scontrol show job <jobid>”
+   - Run the command 
+     * `squeue -u $USER` 
+   - Verify that Job dep1 complete before dep2 starts
+
+11. Multiple accounting groups
+   - Submit a Job:
+     * to a non default accounting group
+     * that asks for 1 proc
+   - Try to see which accounting group your job belongs to, use the scontrol command: 
+     * `scontrol show job <jobid>`
+
+12. stuff
+
 7. Job arrays
    - Submit a serial **job array** that: 
      * Has a maximum wall time of 2 minutes
