@@ -172,59 +172,54 @@
    - Try to see which accounting group your job belongs to, use the scontrol command: 
      * `scontrol show job <jobid>`
 
-12. stuff
-
-7. Job arrays
+12. Job arrays
    - Submit a serial **job array** that: 
      * Has a maximum wall time of 2 minutes
      * Sleeps 30 seconds
      * Runs the command “hostname”
-     * Is named “my-array-job”
+     * Is named “array-job1”
      * **Has 12 tasks**
-     * **Writes a output file to: q7-\<jobid>-\<arrayid>.out**
-     * **Writes a error file to: q7-\<jobid>-\<arrayid>.err**
+     * **Writes a output file to: array-job1-\<arrayid>.out**
    - Run the following commands to see your job running 
      * `squeue –u $USER`
      * `scontrol show job <jobid>`
    - Look at the job output files
 
-8. Job Arrays, limit number runing tasks
+13. Job Arrays, limit number runing tasks
    - Submit a serial job array that: 
      * Has a maximum wall time of 2 minutes
      * Sleeps 30 seconds
      * Runs the command “hostname”
-     * Is named “my-array-job2”
+     * Is named “array-job2”
      * Has 12 tasks**
-     * Writes a output file to: q8-\<arrayid>.out
-     * Writes a error file to: q8-\<arrayid>.err
+     * **Writes a output file to: array-job2-\<arrayid>.out**
      * **Runs at most 2 jobs at once** 
    - Run the following commands to see your job running 
      * `squeue –u $USER`
      * `scontrol show job <jobid>`
    - Look at the job output files
 
-9. Job arrays, indexes
+14. Job arrays, indexes
    - Submit a serial job array that: 
      * Has a maximum wall time of 2 minutes
      * Sleeps 30 seconds
      * Runs the command “hostname”
-     * Is named “my-array-job3”
+     * Is named “array-job3”
      * Has 4 tasks with indexes of: 1, 2, 7, 13
-     * Writes a output file to: q9-\<arrayid>.out
-     * Writes a error file to: q9-\<arrayid>.err
+     * Writes a output file to: array-job3-\<arrayid>.out
      * **Runs at most 2 jobs at once** 
    - Run the following commands to see your job running 
      * `squeue –u $USER`
      * `scontrol show job <jobid>`
    - Look at the job output files
 
-10. Job arrays, 
+15. Job arrays, 
    - Submit a job that: 
      * Has 2 tasks with indexes of: 1, 4
      * Asks for 1 core per task
      * Has a maximum wall time of 2 minutes
      * Emails you when the job is aborted, before it runs and a after it ends
-     * Is named “my-array-var-job”
+     * Is named “array-job4”
    - Look at the SLURM environment variables:
      * Give a list of node names where each process of this job runs? 
        * *Hint:* `echo $SLURM_JOB_NODELIST`
@@ -242,9 +237,9 @@
      * Prints all the SLURM variables
        * *Hint:* `printenv | grep SLURM`
 
-11. Array job with inputs example  **Advanced** 
+16. Array job with inputs example  **Advanced** 
    - Submit a serial job array that: 
-     * Is named “my-input-array-job”
+     * Is named “array-job5”
      * Has 4 tasks with 1 procs each
      * Emails you when your job is complete.
      * The file that is used as input is named: “input.array”
@@ -252,9 +247,8 @@
    - Run the job and see the output
    - As advanced work if time permits see if you can output in a single file as opposed to many array files.
               
-12. MPI Jobs
+17. MPI Jobs
    - Compile the mpisample code
-     * `module load gcc/6.4.0` 
      * `mpif90 -o mpisample mpisample.f90 -O0` 
    - Submit the start-mpi.sh  job 
    - Look at the job with the following commands:
@@ -271,7 +265,7 @@
    - Please list which nodes and cores the job is running on or scheduled to run on and how long it took to run.
    - Compaer the runtime of the codes.
 
-13. MPI, Interactive Job
+18. MPI, Interactive Job
    - Submit a job that:
      * Asks 4 cores
      * Has a walltime of 20 minutes 
@@ -293,7 +287,7 @@
      * Run the command `srun hostname ` 
     
 
-14. MPI, Interactive Job
+19. MPI, Interactive Job
    - Submit a job that:
      * **Asks 4 cores on a single node**
      * Has a walltime of 20 minutes 
@@ -313,7 +307,7 @@
      * On how many tasks per node is the job allocated? 
        * *Hint:* `echo $SLURM_TASKS_PER_NODE`
     
-15. OpenMP jobs 
+20. OpenMP jobs 
    - Submit a job 
      * Asking for 1 node with 4 cores
      * Has a maximum walltime of 20 minutes 
@@ -335,7 +329,7 @@
      * How many cores per task are alloacted for this job
        * *Hint:* `$SLURM_CPUS_PER_TASK"`
 
-16. Hybrid jobs 
+21. Hybrid jobs 
    - Submit a job 
      * Asking for 3 node with 2 tasks each and 2 cores per task
      * Has a maximum walltime of 20 minutes 
@@ -356,105 +350,45 @@
        * *Hint:* `echo $SLURM_TASKS_PER_NODE`
      * How many cores per task are alloacted for this job
        * *Hint:* `$SLURM_CPUS_PER_TASK"`
+    
+22. GPUs   
+   - (GPUs may not be availeble on training cluster, if so try to run these on actual CC clusters) 
+   - Submit a job asking for:
+     * 1 gpu type v100l
+     * 1 cpu
+     * Has a maximum wall time of 10 minutes
+     * Sleeps 500 seconds
+   - Runs the command scontrol showjob
        
-17. Jobs and memory 
+23 Interactive GPUs 
+   - (GPUs may not be availeble on training cluster, if so try to run these on actual CC clusters)       
+   - Submit a interactive job asking for:
+     * 1 gpu type v100l
+     * 1 cpu
+     * Has a maximum wall time of 10 minutes
+   - run `nvidia-smi` to get information on the gpu that is allocated, 
+     * what is running on the GPU
+     * how much memory does it have
+     * how much power is it using
+     * how hot is the GPU
+      
+24. Memory and parallel jobs1
    - Take the start-mem.pbs  script and edit it so that is asks for: `--mem-per-cpu=1000`
    - Submit a job  from the script you edited . Look at the job with the following commands
      * `squeue –u $USER`
      * `scontrol show job -dd <jobid>`
    - How much memory does this job use.
    
-18. Jobs and memory 
+25. Memory and parallel jobs2
    - Take the start-mem.pbs  script and edit it so that is asks for: `--mem=1000`
    - Submit a job  from the script you edited . Look at the job with the following commands
      * `squeue –u $USER`
      * `scontrol show job -dd <jobid>`
    - How much memory does this job use.   
 
-19. Jobs and memory 
+26. Memory and parallel jobs3
    - Take the start-mem.pbs  script and edit it so that is asks for: `--mem-per-cpu=250`
    - Submit a job  from the script you edited . Look at the job with the following commands
      * `squeue –u $USER`
      * `scontrol show job -dd <jobid>`
    - How much memory does this job use.  
-
-20. Jobs and memory  (appropriate resources)
-   - Create a job run the “cryptic” program edit the start-mem2.sh
-   - Make sure your job emails you when is starts, ends and aborts
-   - Make a guess and for enough RAM to run the program 
-   - Submit your edited Job script , look at your running Job with the following commands, look at the ,memory used by your job
-     * `squeue –u $USER`
-     * `scontrol show job -dd <jobid>`
-   - Did your job run successfully? Or fail because of a lack of memory? 
-   - If your job failed due to a lack of memory, increase the maximum memory requested and resubmit your job
-   - Look at the email reporting on your job success, how much resources were reported used. Compare the memory used to the reported memory in point 
-   - while the job is running attach to the job with the following command 
-     * `srun --jobid <jobid> --pty  bash`
-     * then run top and see how much resources cryptic is using. 
-     * exit with the exit command 
-   - Once you know the apropreate memory needed edit job script and request an appropriate amount of memory to run the Job .
-   - Submit your new job
-   - Verify that the jobs runs successfully.
-   
-21. GPUs 
-   - Submit a job asking for:
-     * 1 gpu
-     * 1 cpu
-     * Has a maximum wall time of 10 minutes
-     * Sleeps 500 seconds
-   - Runs the command scontrol showjob
-   
-22.	Software licenses and generic resources 
-   - Currently not implemented on cluster
-
-23. Submit a job asking for that asks for:
-   - 2 tasks
-   - 1 node
-   - Not to run on any nodes with other jobs (Useful if you are trying to debug your job)
-   - See if you can see which nodes your job is running on.
-     * `scontrol show job <jobid>`
-
-24. Job dependencies 
-   - Submit a serial job named dep1, that has:
-     * Walltime of 2:00 
-     * Sleeps 120 seconds
-     * Submit a serial job 22b waits until job dep2 is done
-     * Walltime of 2:00 
-     * Sleeps 120 seconds
-   - Look at job dep2 with “scontrol show job <jobid>”
-   - Run the command 
-     * `squeue -u $USER` 
-   - Verify that Job dep1 complete before dep2 starts
-
-25. Job using temporary directory 
-   - Submit a job that runs in the temporary directory used no more than 1GB of space.
-
-26. Job environment variables. 
-   - Submit a serial job that prints the partition(s) that the job was ran in
- 
-27. Multiple accounting groups
-   - Submit a Job:
-     * to a non default accounting group
-     * that asks for 1 proc
-   - Try to see which accounting group your job belongs to, use the scontrol command: 
-     * `scontrol show job <jobid>`
-
-28. Basic Job info   
-   - Use the following commands to find out how many of your jobs are running, queued, in hold state or complete.
-     * `squeue -u $USER`
-     * `scontrol show jobid -dd <jobid>`
-   - Use the follwing commands to find out how many jobs are running, queued, in hold state or complete on the cluster.
-     * `squeue`
- 
-29. Examining a job 
-   - Start a Job  
-   - Examine its priority with ”sprio”
-   - run `scontrol show jobid -dd <jobid>` and determine how much RAM the Job asks for/used
- 
-30. Job holds
-   - See if any of your jobs in the queue have any job holds, if so identify the hold and the reason why.
- 
-31. How many idle nodes are on the cluster 
-   - `sinfo  --states=idle1
-   - How many nodes are down and drained 
-     * `sinfo –R`
