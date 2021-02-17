@@ -17,6 +17,9 @@ https://docs.google.com/presentation/d/1TMnrivkzvooMhrCCauauvonbwdq6lWPL0S_bjJ8N
 1. Slurm commands cheat sheet: 
 https://docs.google.com/presentation/d/1TFU6bx-Fw3OfCtAe9d5tXUHiv-Z6IOat8L7UfuszE1Y/edit#slide=id.gba67038880_0_116
 
+1. How to ask for help:
+https://docs.google.com/presentation/d/1zOUe3oNrT9rGExuPNH8af-Lkh74x3_tBnfuJWFs7YG0/edit?usp=sharing
+
 Other Useful links:
 1. Parallel computing slides: 
 https://docs.google.com/presentation/d/1sLeLLBLYcq1ye530QDOAidQYPSGE80LVzT7MU0XnYJc/edit#slide=id.p
