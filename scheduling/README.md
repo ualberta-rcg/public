@@ -16,4 +16,4 @@ Reference Materials:
 1. How to ask for help:   https://tiny.one/CC-helpme
  
 Other Useful links:
-1. Parallel computing slides: tinyurl.com/uofa2021w-parallelism
+1. Parallel computing slides: https://tinyurl.com/uofa2021w-parallelism
