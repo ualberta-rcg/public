@@ -14,7 +14,7 @@ Reference Materials:
 1. Slurm commands cheat sheet: https://tinyurl.com/slurm-cheat-sheet
 
 1. How to ask for help:   https://tiny.one/CC-helpme
-2. 
+ 
 Other Useful links:
 1. Parallel computing slides: 
 https://docs.google.com/presentation/d/1sLeLLBLYcq1ye530QDOAidQYPSGE80LVzT7MU0XnYJc/edit#slide=id.p
