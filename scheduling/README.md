@@ -1,4 +1,4 @@
-course slides:   https://tinyurl.com/uofa2021w-sched
+Course slides:   https://tinyurl.com/uofa2021w-sched
 
 The practice job submission questions are in the questions.md file
 
