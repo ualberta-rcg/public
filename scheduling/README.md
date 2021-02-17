@@ -11,8 +11,7 @@ wget https://github.com/ualberta-rcg/public/raw/master/scheduling/answers.tar
 
 Reference Materials:
 
-1. Nodes on CC clusters: 
-https://docs.google.com/presentation/d/1TMnrivkzvooMhrCCauauvonbwdq6lWPL0S_bjJ8NUh4/edit#slide=id.g79a0abf13e_0_25
+1. Nodes on CC clusters:  https://tinyurl.com/cc-nodes-feb21
 
 1. Slurm commands cheat sheet: 
 https://docs.google.com/presentation/d/1TFU6bx-Fw3OfCtAe9d5tXUHiv-Z6IOat8L7UfuszE1Y/edit#slide=id.gba67038880_0_116
