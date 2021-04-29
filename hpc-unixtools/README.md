@@ -10,7 +10,32 @@ We will then extend the same tools and techniques for jobs running on a cluster.
 
 The slides for this workshop can be found [here](https://docs.google.com/presentation/d/10Y2fqe_PwdxbOybSsY7SvRP1wjl8ksblmyyoALSWXGI/edit?usp=sharing)
 
-##### This document will include instructions on how to do the demos that go along with the presentation and includes most of the value component of the workshop particpant. 
+1. Preperation:
+    1. Log in to the Cluster: `ssh user98@training.uofa.c3.ca -X`
+    1. Create a tools directory and cd into into it: `mkdir tools`, `cd tools`
+    1. Download the cryptic program: `wget https://github.com/ualberta-rcg/public/raw/master/HPC-Tuning/cryptic`
+    1. make the cryptic program exactable: `chmod 700 ./cryptic`
+
+1. Working with Tmux
+    1. Open a session new tmux session: `tmux new -s tools`
+    1. Split the pane horizontaly: `Ctrl-b "`
+    1. In the bottom pane run the top analysis command: `Ctrl-b downarrow`, `top -u $USER
+    1. Go the top plane run script program: `Ctrl-b upparrow`
+    1. Run the cryptic program watch what happens in top: `cryptic`
+    1. Create a new window in tmux: `Ctrl-b c`
+    1. Run pstree comand: `pstree -u $USER`
+    1. Change back to the original window: `Ctrl-b w`
+    1. Run the ps command: `ps`
+    1. Detach from the session: `ctrl-b d`
+    1. list the tmux sessions: `tmux ls`
+    1. (Optional) Log out of the text cluster, log back in, go back to the tools directory list tmux sesions: `exit`,`ssh training.uofa.c3.ca -X`,`cd tools` ,`tmux ls`
+    1. Reattach to the tmux session: `tmux -t tools`
+    1. Verify that your session is still running.
+    2. You can choose to close tmux by killing all the windows: `Crl-b &`
+
+1. Working with script 
+
+##### oldstuff
 
 1. Log in to the Cluster have your workshop participants do the same and open 3 separate windows.
  `ssh user98@training.uofa.c3.ca -X`
