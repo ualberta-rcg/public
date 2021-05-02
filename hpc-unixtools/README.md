@@ -80,11 +80,14 @@ The slides for this workshop can be found [here](https://docs.google.com/present
    1. Run the cryptic program how much memory does it use, what is going on on the cluster as multple people run it? 
 
 1. Scheduler  
-   1. nice
-   1. priority 
+   1. Run a `sleep 300` command with nice: `nice -n 2 sleep 300 &`  
+   2. Run `top` or `htop` to see the now nice your program is.
+   3. make you speel progrm even nicer: `renice +2 -p <pid>`
    
 1. Cgroups
-   1. /sys/fs/cgroup    
+   1. Look at the cgroup directories and files: /sys/fs/cgroup  
+   1. Find your shells pid: `echo $$`
+   1. See if you can find your shell in a cgroup tasks file.
   
 1. Signals
    1. Demo `Ctrl-c`
