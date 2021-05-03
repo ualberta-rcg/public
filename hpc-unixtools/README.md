@@ -21,7 +21,6 @@ The slides for this workshop can be found [here](https://docs.google.com/present
     1. Split the pane horizontaly: `Ctrl-b "`
     1. In the bottom pane run the top analysis command: `Ctrl-b downarrow`, `top -u $USER
     1. Go the top plane run script program: `Ctrl-b upparrow`
-    1. Run the cryptic program watch what happens in top: `cryptic`
     1. Create a new window in tmux: `Ctrl-b c`
     1. Run pstree comand: `pstree -u $USER`
     1. Change back to the original window: `Ctrl-b w`
