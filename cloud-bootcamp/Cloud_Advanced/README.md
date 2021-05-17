@@ -1,6 +1,6 @@
 Cloud Advanced course slide:
 
-https://docs.google.com/presentation/d/1Ov5o5utDmlY2-BGHdavChk9GBFHkmIFV1DKskUvyRlw/edit?usp=sharing
+https://docs.google.com/presentation/d/1DNsbT4ibJic-UwZx0Kzub_C9A2zbM3Bn7irVzHg6zkA/edit?usp=sharing
 
 Instruction:
 
