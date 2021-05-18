@@ -4,9 +4,9 @@ Note: The following instruction is based on CentOS Linux. To be updated for othe
 
 Preparation:
 
-In order to run Openstack Heat, we need to set up the computing environment first including python/PIP, Openstack client and Heat client.
+In order to run Openstack/Heat commands, we need to set up the computing environment first including python/PIP, Openstack client and Heat client.
 
-1. Install python and pip (Note: pip is a plugin of python. Once you get python installed, you will be able to use pip).
+1. Install python3 and pip (Note: pip is a plugin of python. Once you get python installed, you will be able to use pip).
 
   - On CentOS Linux :
 
@@ -36,7 +36,17 @@ In order to run Openstack Heat, we need to set up the computing environment firs
     pip install python-heatclient
     ```
 
-3. Download the Openstack client setup script from Arbutus
+3. (Optional) If you found some software/library conflicts with existing ones on your OS, you may use virtualenv to set up a virtual environment, by running:
+
+    ```
+    virtualenv myenv (or give it any other name as you want)
+    source myenv/bin/activate
+    ```
+   From where you can run the above commands safely. 
+
+   (To quit the virtual env, you may run `deactivate`)
+  
+4.  Download the Openstack client setup script from Arbutus
 
     1. Log on to https://arbutus.cloud.computecanada.ca/
     2. At the top right corner, click on your account name
