@@ -40,7 +40,7 @@ or list any other repositories you added to CVMFS_REPOSITORIES variable.
 
 `$ source /cvmfs/soft.computecanada.ca/config/profile/bash.sh`
 
-* More details please refer to: https://docs.computecanada.ca/wiki/Accessing_CVMFS
+More details please refer to: https://docs.computecanada.ca/wiki/Accessing_CVMFS
 
 * To check what software/libraries you can use, run:
 
