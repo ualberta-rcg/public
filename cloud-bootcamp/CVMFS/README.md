@@ -29,7 +29,7 @@ Just simply run the script on your VM it will perform all the setup steps for yo
 * Once it's installed and configured, you can test CVMFS with running:
 
 ```
-$ ls /cvmfs/soft.computecanada.ca
+  $ ls /cvmfs/soft.computecanada.ca
 config  custom  easybuild  gentoo  new_repository  nix
 ```
 
@@ -41,5 +41,15 @@ or list any other repositories you added to CVMFS_REPOSITORIES variable.
 `$ source /cvmfs/soft.computecanada.ca/config/profile/bash.sh`
 
 * More details please refer to: https://docs.computecanada.ca/wiki/Accessing_CVMFS
+
+* To check what software/libraries you can use, run:
+
+`$ module avail`
+
+* You will see a long list of software and libraries (which are called modules), then you can load a certain module by running, e.g., 
+
+`$ module load blast/2.2.26`
+
+
 
 
