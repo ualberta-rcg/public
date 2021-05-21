@@ -16,6 +16,7 @@ resources:
         - network: def-training-cloudbootcamp-network
       security_groups:
         - default
+        - web
 
       # Insert user scripts including parameters
       user_data:
