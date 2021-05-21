@@ -39,8 +39,8 @@ In order to run Openstack/Heat commands, we need to set up the computing environ
 3. (Optional) If you found some software/library conflicts with existing ones on your OS, you may use virtualenv to set up a virtual environment, by running:
 
     ```
-    virtualenv myenv (or give it any other name as you want)
-    source myenv/bin/activate
+    python3 -m venv guest5xxenv 
+    source guest5xxenv/bin/activate
     ```
    From where you can run the above commands safely. 
 
