@@ -51,11 +51,11 @@ In order to run Openstack/Heat commands, we need to set up the computing environ
     1. Log on to https://arbutus.cloud.computecanada.ca/
     2. At the top right corner, click on your account name
     3. In the drop-down menu, click on "Openstack RC file V3"
-    4. A guestxxx-openrc.sh file will be downloaded to your computer
+    4. A def-training-cloudbootcamp.sh file will be downloaded to your computer
  
 4. Source the downloaded guestxxx-openrc.sh file on your computer to set up your Openstack client:
 
-    `source guestxxx-openrc.sh`
+    `source def-training-cloudbootcamp.sh`
     
 5. Verify the client env with running:
 
