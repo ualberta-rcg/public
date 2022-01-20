@@ -53,7 +53,7 @@ The slides for this workshop can be found [here](https://docs.google.com/present
    4. Run the htop command: `htop` 
  
 1. Working with Threads
-   1. Run the ps command: `ps -T`
+   1. Run the ps command: `ps -L`
    1. Run the pstree command: `pstree -p`
    1. Run the htop command: `htop -H`  
 
