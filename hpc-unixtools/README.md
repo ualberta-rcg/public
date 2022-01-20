@@ -28,7 +28,7 @@ The slides for this workshop can be found [here](https://docs.google.com/present
     1. Detach from the session: `ctrl-b d`
     1. list the tmux sessions: `tmux ls`
     1. (Optional) Log out of the text cluster, log back in, go back to the tools directory list tmux sesions: `exit`,`ssh training.uofa.c3.ca -X`,`cd tools` ,`tmux ls`
-    1. Reattach to the tmux session: `tmux -t tools`
+    1. Reattach to the tmux session: `tmux attach -t tools`
     1. Verify that your session is still running.
     1. You can choose to close tmux by killing all the windows: `Crl-b &`
 
