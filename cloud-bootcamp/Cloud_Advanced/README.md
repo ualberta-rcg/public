@@ -1,8 +1,6 @@
-Cloud Advanced course slide:
+Course slide deck can be found here: [Cloud Advanced - Orchestration](https://docs.google.com/presentation/d/1jRZbOIgsxe38ltPsGQYqWj0kvkOTAtghUgH2EzAbFs4/edit?usp=sharing)
 
-https://docs.google.com/presentation/d/1DNsbT4ibJic-UwZx0Kzub_C9A2zbM3Bn7irVzHg6zkA/edit?usp=sharing
-
-Instruction:
+Instructions:
 
 * [Cloud Advanced Instruction](Instructions.md)
 
