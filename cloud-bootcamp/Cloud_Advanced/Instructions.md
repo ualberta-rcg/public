@@ -32,8 +32,8 @@ In order to run Openstack/Heat commands, we need to set up the computing environ
 2. Use PIP to install python-openstackclient and python-heatclient
 
     ```
-    pip install python-openstackclient
-    pip install python-heatclient
+    pip3 install python-openstackclient
+    pip3 install python-heatclient
     ```
 
 3. (Optional) If you found some software/library conflicts with existing ones on your OS, you may use virtualenv to set up a virtual environment, by running:
