@@ -51,7 +51,17 @@ resources:
     properties:
       floating_ip: { get_resource: floating_ip }
       server_id: { get_resource: guest500_vm }
+      
+#  volume1:
+ #   type: OS::Cinder::Volume
+  #  properties:
+   #   size: 10
 
+#  volume_attachment:
+ #   type: OS::Cinder::VolumeAttachment
+  #  properties:
+   #   volume_id: { get_resource: volume1 }
+    #  instance_uuid: { get_resource: guest500_vm }
 
 # Specify and retrieve outputs
 outputs:
