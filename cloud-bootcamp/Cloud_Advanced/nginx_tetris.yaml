@@ -10,7 +10,7 @@ resources:
 
     properties:
       key_name: guest500_keypair
-      image: CentOS-7-x64-2020-03
+      image: CentOS-7-x64-2021-11
       flavor: p4-6gb
       networks:
         - network: def-training-cloudbootcamp-network
