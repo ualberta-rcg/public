@@ -92,14 +92,14 @@ In order to run Openstack/Heat commands, we need to set up the computing environ
        type: OS::Nova::Server
        properties:
          key_name: guest5xx_keypair   # Your key pair name 
-         image: CentOS-7-x64-2020-03
+         image: CentOS-7-x64-2021-11
          flavor: p1-1.5gb 
          networks:
            - network: def-training-cloudbootcamp-network 
          security_groups:
            - default
    ```
-   Save it as a file with extension .yaml (e.g.: ~/simple.yaml)
+   Save it as a file with an extension .yaml (e.g.: simple.yaml)
    
  9. Create your first stack with the template:
  
@@ -109,7 +109,7 @@ In order to run Openstack/Heat commands, we need to set up the computing environ
     
     Example 1:
     
-    `openstack stack create -t ~/simple.yaml guest500_stack`
+    `openstack stack create -t simple.yaml guest500_stack`
      
 10. Check the stack status:
     
