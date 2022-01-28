@@ -7,7 +7,7 @@ resources:
     type: OS::Nova::Server
     properties:
       key_name: guest500_keypair
-      image: CentOS-7-x64-2020-03
+      image: CentOS-7-x64-2021-11
       flavor: p1-1.5gb
       networks:
         - network: def-training-cloudbootcamp-network
