@@ -11,7 +11,7 @@ Using HPC resources is a challenging topic to a new user and best practices or w
 ##### This document will include instructions on how to do the demos that go along with the presentation and includes most of the value component of the workshop particpant. 
 
 1. Log in to the Cluster have your workshop participants do the same and open 3 separate windows.
- `ssh user98@training.uofa.c3.ca -X`
+ `ssh user98@spring2022-uofa.c3.ca -X`
 1. Have the class run script to capture all the input and output in the workshop. Mention the utility of using this program for support requests. 
 `script hpc4-worskshop.txt`
 1. Let us look on the server/node we are logged in on, `hostname` and the location `pwd` 
