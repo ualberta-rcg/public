@@ -55,7 +55,7 @@ In order to run Openstack/Heat commands, we need to set up the computing environ
  
 4. Source the downloaded guestxxx-openrc.sh file on your computer to set up your Openstack client:
 
-    `source def-training-cloudbootcamp.sh`
+    `source def-training-cloud-openrc.sh`
     
 5. Verify the client env with running:
 
@@ -72,13 +72,12 @@ In order to run Openstack/Heat commands, we need to set up the computing environ
    openstack network list
    openstack keypair list
    openstack security group list
-   openstack stack list
    ```
    
 7. Create a key pair for Heat
    ```
-   openstack keypair create guest5XX_keypair > heat_key.priv
-   chmod 400 heat_key.priv
+   openstack keypair create guest5XX_keypair > guest5xx_key.priv
+   chmod 400 guest5xx_key.priv
    ```
    
 8. Create your first Heat template, e.g.:
