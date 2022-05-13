@@ -4,7 +4,7 @@ description: A template to deploy a Nginx based web service
 
 resources:
   # Name of the resource
-  guest500_vm:
+  guest5xx_vm:
     # Create a Nova instance
     type: OS::Nova::Server
 
