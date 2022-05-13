@@ -3,14 +3,14 @@ heat_template_version: 2015-04-30
 description: A simple template to deploy a basic instance
 
 resources:
-  guest500_vm:
+  guest5xx_vm:
     type: OS::Nova::Server
     properties:
-      key_name: guest500_keypair
+      key_name: guest5xx_keypair
       image: CentOS-7-x64-2021-11
       flavor: p1-1.5gb
       networks:
-        - network: def-training-cloudbootcamp-network
+        - network: def-training-cloud-network
       security_groups:
         - default
 
