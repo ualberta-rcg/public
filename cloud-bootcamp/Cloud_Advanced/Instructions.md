@@ -118,14 +118,15 @@ In order to run Openstack/Heat commands, we need to set up the computing environ
     
     `opensteack stack resource list`
     `openstack stack resource show STACK_NAME RESOURCE_NAME`
+
+11. Example 2: create an nginx based web server
     
-11. To update a stack after applied some changes to the template:
+    `openstack stack create -t nginx.yaml guest500_stack`
+    
+12. To update a stack after applied some changes to the template:
   
     `openstack stack update -t HEAT_TEMPLATE STACK_NAME`
-    
-    Example 2:
-    
-    `openstack stack update -t nginx.yaml guest500_stack`
+   
     
     Example 3:
     
@@ -134,7 +135,7 @@ In order to run Openstack/Heat commands, we need to set up the computing environ
     Note: The above yaml files can be found on github under `public/cloud-bootcamp/Cloud_Advanced` .
 
     
-12. Other Heat (or stack) operations:
+13. Other Heat (or stack) operations:
   
     ```
     # To suspend a stack
