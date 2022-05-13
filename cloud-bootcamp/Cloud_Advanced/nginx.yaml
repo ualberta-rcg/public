@@ -9,13 +9,14 @@ resources:
     type: OS::Nova::Server
 
     properties:
-      key_name: guest500_keypair
+      key_name: guest5xx_keypair
       image: CentOS-7-x64-2021-11
       flavor: p4-6gb
       networks:
-        - network: def-training-cloudbootcamp-network
+        - network: def-training-cloud-network
       security_groups:
         - default
+        - web
 
       # Insert user scripts including parameters
       user_data: |
@@ -50,7 +51,7 @@ resources:
     type: OS::Nova::FloatingIPAssociation
     properties:
       floating_ip: { get_resource: floating_ip }
-      server_id: { get_resource: guest500_vm }
+      server_id: { get_resource: guest5xx_vm }  # replace it with your own guest account
       
 #  volume1:
  #   type: OS::Cinder::Volume
@@ -61,7 +62,7 @@ resources:
  #   type: OS::Cinder::VolumeAttachment
   #  properties:
    #   volume_id: { get_resource: volume1 }
-    #  instance_uuid: { get_resource: guest500_vm }
+    #  instance_uuid: { get_resource: guest5xx_vm }
 
 # Specify and retrieve outputs
 outputs:
