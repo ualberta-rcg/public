@@ -94,7 +94,7 @@ In order to run Openstack/Heat commands, we need to set up the computing environ
          image: CentOS-7-x64-2021-11
          flavor: p1-1.5gb 
          networks:
-           - network: def-training-cloudbootcamp-network 
+           - network: def-training-cloud-network 
          security_groups:
            - default
    ```
