@@ -4,14 +4,14 @@ description: A template to deploy a Nginx based web service
 
 resources:
   # Name of the resource
-  guest500_vm:
+  guest5xx_vm:
     # Create a Nova instance
     type: OS::Nova::Server
 
     properties:
-      key_name: guest500_keypair
+      key_name: guest5xx_keypair
       image: CentOS-7-x64-2021-11
-      flavor: p2-3gb
+      flavor: p4-6gb
       networks:
         - network: def-training-cloud-network
       security_groups:
@@ -61,7 +61,7 @@ resources:
     type: OS::Nova::FloatingIPAssociation
     properties:
       floating_ip: { get_resource: floating_ip }
-      server_id: { get_resource: guest500_vm }
+      server_id: { get_resource: guest5xx_vm }
 
 
 # Specify and retrieve outputs
