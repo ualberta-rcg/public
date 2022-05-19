@@ -50,6 +50,11 @@ More details please refer to: https://docs.computecanada.ca/wiki/Accessing_CVMFS
 
 `$ module load blast/2.2.26`
 
+* The following LMOD cache enabling settings can be used to accelerate the module loadings.
+
+`$ export RSNT_ENABLE_LMOD_CACHE=yes
+ $ module update`
+
 
 
 
