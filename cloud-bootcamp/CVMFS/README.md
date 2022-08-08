@@ -2,7 +2,7 @@
 
 There are different approaches to enable CVMFS on a cloud, either by adding a Customzation Script when launching a VM, or install & configure directly on a running VM, or even apply it to your own cloud image(s). 
 
-* Here is the script for different OS flavors:
+* Here is the script for RedHat/CentOS flavor (please change `yum` command accordingly for other flavors, such as `apt-get` for Ubuntu/Debian):
 
   ![CVMFS Customization Script](https://github.com/ualberta-rcg/public/blob/master/cloud-bootcamp/CVMFS/custom_script)
 
