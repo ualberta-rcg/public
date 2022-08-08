@@ -4,15 +4,7 @@ There are different approaches to enable CVMFS on a cloud, either by adding a Cu
 
 * Here is the script for different OS flavors:
 
-  -- For CentOS/Redhat: ![CVMFS Customization Script](https://github.com/ualberta-rcg/public/blob/master/cloud-bootcamp/CVMFS/custom_script)
-
-  -- For Fedora: (TBD) 
-
-  -- For Ubuntu/Debian:(TBD) 
-
-  -- For SLES/OpenSUSE: (TBD) 
-
-  -- For Windows: (TBD) 
+![CVMFS Customization Script](https://github.com/ualberta-rcg/public/blob/master/cloud-bootcamp/CVMFS/custom_script)
 
 
 * To enable CVMFS via Openstack Dashboard:
