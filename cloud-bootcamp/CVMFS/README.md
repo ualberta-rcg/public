@@ -57,5 +57,11 @@ More details please refer to: https://docs.computecanada.ca/wiki/Accessing_CVMFS
  $ module update
 ```
 
-
-
+* To access AI/ML software that are not modulized, here is an example of the setup:
+`$ module load StdEnv/2020`
+`$ module load python/3.9.6`
+`$ python3 -m venv myenv`
+`$ source myenv/bin/activate`
+`$ avail_wheels`
+`$ pip install --no-index torch torchvision torchtext torchaudio`
+   (For more details, refer to: https://docs.alliancecan.ca/wiki/PyTorch)
