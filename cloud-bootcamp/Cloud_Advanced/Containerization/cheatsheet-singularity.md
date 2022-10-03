@@ -39,7 +39,7 @@ Singularity basic operations
 
     id
     (or from the host `singularity exec hello-world_latest.sif id`)
-    uid=3003833(erming) gid=3003833(erming) groups=3003833(erming),6001146(def-erming)
+    uid=30xxxx(erming) gid=30xxxx(erming) groups=30xxxx(erming),60xxxx(def-erming)
 
     # comparing to docker:
     $ docker run busybox id
