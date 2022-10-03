@@ -59,7 +59,7 @@ Singularity basic operations
   # To Access GPU
    
     # switch to a compute node by using salloc (Note it's not recommended to run Singuarity from a login node)
-    salloc -p gpu --gres=gpu:1 --mem 1000 -n 4 -t 60 --nodes=1 --account=def-erming
+    salloc --gres=gpu:1 --mem 1000 -n 4 -t 60 --nodes=1 --account=def-erming
     (#if there is not an image yet, run: singularity pull shub://singularityhub/hello-world)
 
     # Access GPU with the --nv option 
