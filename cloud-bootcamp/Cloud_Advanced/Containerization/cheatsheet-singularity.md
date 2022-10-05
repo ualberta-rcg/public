@@ -1,5 +1,5 @@
 
-On Alliance, Singularity is already installed and set up for users. So just module load it. 
+On the Alliance systems (e.g Cedar, Graham, etc.), Singularity is already installed and set up for users. So just module load it. 
 ```
   # Load the module
   module load singularity
