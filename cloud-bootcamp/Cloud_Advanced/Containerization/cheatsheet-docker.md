@@ -104,6 +104,31 @@
        docker run -d -P --name mynginx-imported mynginx:v1
        docker port mynginx-imported
        curl http://localhost:<port>
+       
+   5) Customize and upload an image
+      #If image is not loaded yet
+      docker search image_name
+      docker pull myrepo/image_name:tag
+      #If image is loaded
+      docker images|grep image_name
+      
+      #Run a container from the image
+      docker run -d -P --name container_name image_name:tag
+      #Run into the shell with full privilege
+      docker exec -it -u root --privileged container_name bash
+      #Do some change from inside the contianer
+      
+      #Stop the container
+      docker stop container_name
+      #Commit the change with adding a note
+      docker commit -m "Enabled lmod and cache" 1af465391e4a myrepo/image_name:newtag
+      
+      #Login to docker hub (register at first from hub.docker.com if haven't yet)
+      docker login
+      #Push the image:tag to a repo
+      docker push myrepo/image_name:newtag
+ 
+ 
 
 
    ```
