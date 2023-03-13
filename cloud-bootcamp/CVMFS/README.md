@@ -49,5 +49,6 @@ python3 -m venv myenv
 source myenv/bin/activate
 avail_wheels
 pip install --no-index torch torchvision torchtext torchaudio
-   (For more details, refer to: https://docs.alliancecan.ca/wiki/PyTorch)
 ```
+(For more details, refer to: https://docs.alliancecan.ca/wiki/PyTorch)
+
