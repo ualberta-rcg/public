@@ -73,41 +73,51 @@
    
    
    3) Transfer files between host and containers
-   # Copy a file from the host to a contianer
-      docker cp /etc/redhat-release $CONTAINER_ID:/tmp
-      docker exec $CONTAINER_ID ls /tmp
+   # Copy a file from the host to a contianer, e.g:
+      docker cp /etc/redhat-release myweb:/tmp
+      docker exec myweb ls /tmp
       OR,
-      docker exec -it 90b18f696187 sh
+      docker exec -it myweb sh
       ls /tmp
 
       Vice versa, 
-      docker cp $CONTAINER_ID:/etc/motd .
+      docker cp myweb:/etc/motd .
       cat ./motd
       
    4) Move container from one host to another
     # Method A, Export/Import a container
       # Export a container to a tar ball
-       docker export myweb > /tmp/myweb.tar
-       ls /tmp/myweb.tar
+       docker export myweb > /tmp/myweb-ei.tar
+       ls /tmp/myweb-ei.tar
 
-       docker stop myweb2
-       docker rm myweb2
-
-       # Create a container by importing from a tar ball
-       cat /tmp/myweb2.tar | docker import - myweb2-imported:[tag]
+       # Create an image by importing from a tar ball
+       cat /tmp/myweb-ei.tar | docker import - myweb-ei:v1  # v1 is an tag (or version#) to be added to the image
+       # Create a container from the image
+       docker run -d -P --name myweb-ei myweb-ei:v1 sleep 300 & 
+       # Run a shell and check the processes running in the container. 
+       docker exec -it myweb-ei sh
+         # Need to install ps 
+         # apt update & apt install procps
+         # ps -ef
 
     # Method B, Save/Load an image
        # Stop a container and save/commit the changes to an image
        docker stop myweb
        docker commit myweb myweb:v1 
        # Save an image into tar ball file
-       docker save -o /tmp/myweb.tar myweb
+       docker save -o /tmp/myweb-sl.tar myweb
 
-       # Load an image from the saved tarball
-       docker load -i /tmp/myweb.tar  #load an image from a tar ball
-       docker run -d -P --name myweb-imported myweb:v1
-       docker port myweb-imported
+       # On the destination, load an image from the saved tarball, 
+       docker load -i /tmp/myweb-sl.tar  #load an image from a tar ball
+       docker run -d -P --name myweb-sl myweb:v1
+       docker port myweb-sl
        curl http://localhost:<port>
+       # Run a shell and check the processes running in the container. 
+       docker exec -it myweb-sl sh
+         # Need to install ps 
+         # apt update & apt install procps
+         # ps -ef
+       (Now we can see the difference between mehtod A and B)
        
    5) Customize and upload an image
       #If image is not loaded yet
