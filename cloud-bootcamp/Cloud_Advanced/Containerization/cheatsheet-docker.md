@@ -20,12 +20,6 @@
    # Show all containers including exited ones
      docker ps -a
      
-   # Rename a container
-     docker rename $CONTAINER new_name
-    
-   # Start/stop a container
-     docker stop $CONTAINER_ID Or $CONTAINER_NAME
-
    # Download an image
      docker pull busybox
    # List downloaded images
@@ -33,20 +27,30 @@
    
    # Run a container and a command, based on the downloaded image
      docker run busybox echo "Hello from inside busybox"
+     docker run busybox sleep 300 &
      
    # Interactively run a container
      docker run -it busybox sh
-     ls
-     uptime
-     ls /bin
-     exit
+       #from the container shell, run:
+       hostname
+       whoami
+       ls
+       uptime
+       ls /bin
+       exit
+       
+   # Rename a container
+     docker rename $CONTAINER new_name
+   # Start/stop a container
+     docker stop $CONTAINER_ID Or $CONTAINER_NAME
+     docker start $CONTAINER_ID Or $CONTAINER_NAME
      
    # Remove a container
      docker ps -a
      docker rm $CONTAINER_ID
    # Remove all exited containers 
      docker rm $(docker ps -a -q -f status=exited)
-     Or,
+     #Or,
      docker container prune
      
    # Remove an image
@@ -56,15 +60,15 @@
    # Search an image from docker repository
      docker search nginx
    # Run nginx container interactively
-     docker run --rm -it nginx
-     exit
+     docker run -it nginx
+     # Type Ctrl-C to exit
    # Run nginx in detached mode and generate ports automatically
-     docker run -d -P --name mynginx nginx
-     docker port mynginx
-     curl http://localhost:49153
+     docker run -d -P --name myweb nginx
+     docker port myweb
+     curl http://localhost:[PORT#], e.g, curl http://localhost:32768
    # Specify a port 
-     docker run -d -p 8080:80 --name mynginx2 nginx
-     docker port mynginx2
+     docker run -d -p 8080:80 --name myweb2 nginx
+     docker port myweb2
      curl http://localhost:8080
    
    
@@ -83,26 +87,26 @@
    4) Move container from one host to another
     # Method A, Export/Import a container
       # Export a container to a tar ball
-       docker export mynginx > /tmp/mynginx.tar
-       ls /tmp/mynginx.tar
+       docker export myweb > /tmp/myweb.tar
+       ls /tmp/myweb.tar
 
-       docker stop mynginx2
-       docker rm mynginx2
+       docker stop myweb2
+       docker rm myweb2
 
        # Create a container by importing from a tar ball
-       cat /tmp/mynginx2.tar | docker import - mynginx2-imported:[tag]
+       cat /tmp/myweb2.tar | docker import - myweb2-imported:[tag]
 
     # Method B, Save/Load an image
        # Stop a container and save/commit the changes to an image
-       docker stop mynginx
-       docker commit mynginx mynginx:v1 
+       docker stop myweb
+       docker commit myweb myweb:v1 
        # Save an image into tar ball file
-       docker save -o /tmp/mynginx.tar mynginx
+       docker save -o /tmp/myweb.tar myweb
 
        # Load an image from the saved tarball
-       docker load -i /tmp/mynginx.tar  #load an image from a tar ball
-       docker run -d -P --name mynginx-imported mynginx:v1
-       docker port mynginx-imported
+       docker load -i /tmp/myweb.tar  #load an image from a tar ball
+       docker run -d -P --name myweb-imported myweb:v1
+       docker port myweb-imported
        curl http://localhost:<port>
        
    5) Customize and upload an image
