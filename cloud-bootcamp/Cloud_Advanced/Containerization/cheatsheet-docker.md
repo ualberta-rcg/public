@@ -117,30 +117,32 @@
          # Need to install ps 
          # apt update & apt install procps
          # ps -ef
-       (Now we can see the difference between mehtod A and B)
+         
+   (Now we can see the difference between mehtod A and B to see the difference)
        
    5) Customize and upload an image
       #If image is not loaded yet
-      docker search image_name
-      docker pull myrepo/image_name:tag
+      docker search IMAGE_NAME
+      docker pull CONTAINER IMAGE_NAME:TAG
       #If image is loaded
-      docker images|grep image_name
+      docker images|grep IMAGE_NAME
       
       #Run a container from the image
-      docker run -d -P --name container_name image_name:tag
+      docker run -d -P --name CONTAINER IMAGE_NAME:TAG
       #Run into the shell with full privilege
-      docker exec -it -u root --privileged container_name bash
-      #Do some change from inside the contianer
+      docker exec -it -u root --privileged CONTAINER bash
+      
+      #Do some changes from inside the contianer, and then,
       
       #Stop the container
-      docker stop container_name
+      docker stop CONTAINER
       #Commit the change with adding a note
-      docker commit -m "Enabled lmod and cache" 1af465391e4a myrepo/image_name:newtag
+      docker commit -m "Enabled something or added something..." CONTAINER REPO_NAME/IMAGE_NAME:NEW_TAG
       
       #Login to docker hub (register at first from hub.docker.com if haven't yet)
       docker login
       #Push the image:tag to a repo
-      docker push myrepo/image_name:newtag
+      docker push REPO_NAME/IMAGE_NAME:NEW_TAG
  
  
 
