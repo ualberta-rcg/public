@@ -1,1 +1,1 @@
-Course slide deck can be found here: [Cloud Intro](https://docs.google.com/presentation/d/19ZQ7riVD4795Xx3Fck9V32wEHOg0Iwb-WYuMNDQioxI/edit#slide=id.p)
+Course slide deck can be found here: [Cloud Intro](https://docs.google.com/presentation/d/1fh0TYDZiFAPGg88qKLwP6Mz3JjOEbS1F8DsyQTPZn-0/edit?pli=1#slide=id.p)
