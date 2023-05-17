@@ -3,7 +3,8 @@ sudo yum -y install https://ecsft.cern.ch/dist/cvmfs/cvmfs-release/cvmfs-release
 sudo yum -y install cvmfs cvmfs-config-default cvmfs-config-computecanada cvmfs-auto-setup
 
 # For Ubuntu/Debian
-sudo dpkg -i https://ecsft.cern.ch/dist/cvmfs/cvmfs-release/cvmfs-release-latest_all.deb
+wegt https://ecsft.cern.ch/dist/cvmfs/cvmfs-release/cvmfs-release-latest_all.deb
+sudo dpkg -i cvmfs-release-latest_all.deb
 sudo apt-get update
 sudo apt-get install cvmfs
 
