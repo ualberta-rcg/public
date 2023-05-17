@@ -22,6 +22,11 @@ or list any other repositories you added to CVMFS_REPOSITORIES variable.
 
 * Now, you can run the following command to enable software modules from CVMFS:
 
+If you don't have the environment module installed yet,
+On Redhat/CentOS: `$ yum -y install environment-modules`
+Or on Ubuntu/Debian: `$ apt-get update; apt-get -y install environment-modules`
+
+And then source the setup script:
 `$ source /cvmfs/soft.computecanada.ca/config/profile/bash.sh`
 
 More details please refer to: https://docs.computecanada.ca/wiki/Accessing_CVMFS
