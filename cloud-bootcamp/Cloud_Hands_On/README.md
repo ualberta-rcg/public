@@ -1,4 +1,4 @@
-Course slide deck can be found here: [Cloud Hands-on](https://docs.google.com/presentation/d/1vmyENuNYJkzlqB6uUO0mVuFEbp7RuKeMiAfQnuqrMgc/edit#slide=id.gb593cdf73b_0_243)
+Course slide deck can be found here: [Cloud Hands-on](https://docs.google.com/presentation/d/1uqKUHy-Hjv79Fb_7oVw1u1Jjze8GLODi9UIUUN_VUwE/edit?pli=1#slide=id.p)
 
 
   
