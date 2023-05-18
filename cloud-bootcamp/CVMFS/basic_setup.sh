@@ -1,6 +1,6 @@
 # For Redhat/Centos
 sudo yum -y install https://ecsft.cern.ch/dist/cvmfs/cvmfs-release/cvmfs-release-latest.noarch.rpm
-sudo yum -y install cvmfs cvmfs-config-default cvmfs-config-computecanada cvmfs-auto-setup
+sudo yum -y install cvmfs cvmfs-config-default cvmfs-auto-setup
 
 # For Ubuntu/Debian
 #wegt https://ecsft.cern.ch/dist/cvmfs/cvmfs-release/cvmfs-release-latest_all.deb
@@ -13,7 +13,7 @@ sudo yum -y install cvmfs cvmfs-config-default cvmfs-config-computecanada cvmfs-
 
 
 sudo bash -c 'cat > /etc/cvmfs/default.local' << EOF
-CVMFS_REPOSITORIES="cvmfs-config.computecanada.ca,soft.computecanada.ca" 
+CVMFS_REPOSITORIES="soft.computecanada.ca" 
 CVMFS_STRICT_MOUNT="yes"
 CVMFS_CLIENT_PROFILE=single
 CVMFS_QUOTA_LIMIT=10000 # Adjust this value according to the storage space on the VM
