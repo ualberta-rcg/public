@@ -22,10 +22,16 @@ config  custom  easybuild  gentoo  new_repository  nix
 * Now, you can run the following command to enable software modules from CVMFS:
 
 If you don't have the environment module installed yet,
-On Redhat/CentOS: `$ yum -y install environment-modules`
-Or on Ubuntu/Debian: `$ apt-get update; apt-get -y install environment-modules`
+On Redhat/CentOS: 
+
+`$ yum -y install environment-modules`
+
+Or on Ubuntu/Debian: 
+
+`$ apt-get update; apt-get -y install environment-modules`
 
 And then source the setup script:
+
 `$ source /cvmfs/soft.computecanada.ca/config/profile/bash.sh`
 
 More details please refer to: https://docs.computecanada.ca/wiki/Accessing_CVMFS
@@ -37,6 +43,7 @@ More details please refer to: https://docs.computecanada.ca/wiki/Accessing_CVMFS
 * You will see a long list of software and libraries (which are called modules), then you can load a certain module by running, e.g., 
 
 `$ module load blast/2.2.26`
+
 `$ module list`
 
 * The following LMOD cache enabling settings can be used to accelerate the module loadings.
