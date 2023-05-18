@@ -1,13 +1,11 @@
 
-On the Alliance systems (e.g Cedar, Graham, etc.), Singularity/Apptainer is already installed and set up for users. So just module load it. 
+On the Alliance systems (e.g Cedar, Graham, etc.), Singularity is already installed and set up for users. So just module load it. 
 ```
   # Load the module
   module load singularity
-  or 
-  module load apptainer
   
   
-  # However if you haven't yet load the standard environmental modules, you should do it prior to Singularity/Apptainer
+  # However if you haven't yet load the standard environmental modules, you should do it prior to Singularity
   module load CcEnv StdEnv/2020
   
   # Note that on Alliance systems, it's not recommended to run Singularity on the login nodes so better do it on a compute node with the interactive mode using "salloc".
@@ -24,7 +22,7 @@ On the Alliance systems (e.g Cedar, Graham, etc.), Singularity/Apptainer is alre
   (e.g. salloc --account=def-erming --nodes=1)
 ```
 
-Singularity/Apptainer basic operations
+Singularity basic operations
 ```
   # Pull an exiting image from Singularity repo
   singularity pull shub://singularityhub/hello-world
