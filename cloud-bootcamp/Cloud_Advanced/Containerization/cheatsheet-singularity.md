@@ -1,17 +1,30 @@
 
-On the Alliance systems (e.g Cedar, Graham, etc.), Singularity is already installed and set up for users. So just module load it. 
+On the Alliance systems (e.g Cedar, Graham, etc.), Singularity/Apptainer is already installed and set up for users. So just module load it. 
 ```
   # Load the module
   module load singularity
+  or 
+  module load apptainer
   
-  # However if you haven't yet load the standard environmental modules, you should do it prior to Singularity
+  
+  # However if you haven't yet load the standard environmental modules, you should do it prior to Singularity/Apptainer
   module load CcEnv StdEnv/2020
   
-  # Note that on Cedar/etc system, it's not recommended to run Singularity on the login nodes so better do it on a compute node with the interactive mode
-  salloc --account=def-erming --nodes=1
+  # Note that on Alliance systems, it's not recommended to run Singularity on the login nodes so better do it on a compute node with the interactive mode using "salloc".
+  # Moreover, /home is not allowed for submitting jobs so we change the work directory to /project/ACCOUNT_ID/USERNAME. 
+  # Hint, simply run "id" it will show the default account name/ID for you (e.g. def-xxxx(#######)).
+ 
+  # show your own id and group info
+  id 
+  #change to /project/YOUR_DEFAULT_GROUP_ID/YOUR_USERNAME
+  cd /project/`id |awk -vRS=',' '/def-/{print}' |awk -F'(' '{print $1}'`/`whoami`
+  (e.g. cd /project/6001146/erming)
+  
+  salloc --account=YOUR_DEFAULT_ACCOUNT_NAME --nodes=1
+  (e.g. salloc --account=def-erming --nodes=1)
 ```
 
-Singularity basic operations
+Singularity/Apptainer basic operations
 ```
   # Pull an exiting image from Singularity repo
   singularity pull shub://singularityhub/hello-world
@@ -22,15 +35,17 @@ Singularity basic operations
     ls
 
   # Run a container
+    # Option A, run the image file directly
     ./hello-world_latest.sif
-    singularity exec hello-world_latest.sif
+    # Option B, use singluarity/apptainer to run 
+    singularity run hello-world_latest.sif
     
     # Run a command from inside the container
     singularity exec <image> <command line>
     singularity exec hello-world_latest.sif cat /etc/os-release
 
     # Bind/Mount host directories, e.g.,
-    singularity exec -B /home -B /tmp hello-world_latest.sif
+    singularity exec -B /opt hello-world_latest.sif
 
   # Start a shell from the container image
   singularity shell hello-world_latest.sif
