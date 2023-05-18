@@ -15,6 +15,7 @@ sudo dnf install https://ecsft.cern.ch/dist/cvmfs/cvmfs-2.10.1/cvmfs-2.10.1-1.fc
 sudo bash -c 'cat > /etc/cvmfs/default.local' << EOF
 CVMFS_REPOSITORIES="cvmfs-config.computecanada.ca,soft.computecanada.ca" 
 CVMFS_STRICT_MOUNT="yes"
+CVMFS_CLIENT_PROFILE=single
 CVMFS_QUOTA_LIMIT=10000 # Adjust this value according to the storage space on the VM
 CVMFS_HTTP_PROXY="http://cvmfs-cache.arbutus.cloud.computecanada.ca:3128;DIRECT"
 EOF
