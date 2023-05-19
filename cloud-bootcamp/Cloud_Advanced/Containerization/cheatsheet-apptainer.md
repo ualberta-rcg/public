@@ -1,6 +1,8 @@
 
-1. Install or load Apptainer 
-Note, on Alliance systems (e.g Cedar, Graham, etc. or any cloud VM with CVMFS mounted), Apptainer is available in the modules. So we just need to `module load` it. 
+# Apptainer/Singularity basics
+1. Install or load Apptainer. 
+
+   Note, on Alliance systems (e.g Cedar, Graham, etc. or any cloud VM with CVMFS mounted), Apptainer is available in the modules. So we just need to `module load` it. 
 ```
   # Load the module
   module load apptainer
@@ -26,7 +28,7 @@ Note, on Alliance systems (e.g Cedar, Graham, etc. or any cloud VM with CVMFS mo
 ```
 
 2. Apptainer basic operations
-```
+  ```
   # Pull an exiting image from Singularity repo
   apptainer pull shub://singularityhub/hello-world
   ls
@@ -81,7 +83,7 @@ Note, on Alliance systems (e.g Cedar, Graham, etc. or any cloud VM with CVMFS mo
   ```
 
   # To Access GPU (on Alliance system, e.g. Cedar)
-    ```
+
     # switch to a compute node by using salloc (Note it's not recommended to run Singuarity from a login node)
     salloc --gres=gpu:1 --mem 1000 -n 4 -t 60 --nodes=1 --account=def-erming
     (#if there is not an image yet, run: singularity pull shub://singularityhub/hello-world)
@@ -91,11 +93,11 @@ Note, on Alliance systems (e.g Cedar, Graham, etc. or any cloud VM with CVMFS mo
 
     # Check the GPU info
     Apptainer> nvidia-smi
-    ```
     
   # To submit a slurm job  (on Alliance system, e.g. Cedar)
-    ```
     #Create a job script and name it apptainer_batch.sh
+    
+    sudo bash -c 'cat > apptainer_batch.sh' << EOF
     #!/bin/bash
     #SBATCH -J apptainer_test
     #SBATCH -o apptainer_test.out
@@ -105,12 +107,8 @@ Note, on Alliance systems (e.g Cedar, Graham, etc. or any cloud VM with CVMFS mo
     #SBATCH --mem=4000
     # Perform some tasks, e.g., 
     apptainer exec hello-world_latest.sif cat /etc/os-release
-    ```
+    EOF
     
     # and then submit it
-    ```
     sbatch apptainer_batch.sh
-    ```
    
-
-```
