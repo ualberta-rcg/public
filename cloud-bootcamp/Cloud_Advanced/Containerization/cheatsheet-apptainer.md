@@ -95,9 +95,9 @@
     Apptainer> nvidia-smi
     
   # To submit a slurm job  (on Alliance system, e.g. Cedar)
-    #Create a job script and name it apptainer_batch.sh
+    # Create a job script and name it apptainer_batch.sh
     
-    sudo bash -c 'cat > apptainer_batch.sh' << EOF
+    bash -c 'cat > apptainer_batch.sh' << EOF
     #!/bin/bash
     #SBATCH -J apptainer_test
     #SBATCH -o apptainer_test.out
@@ -109,6 +109,6 @@
     apptainer exec hello-world_latest.sif cat /etc/os-release
     EOF
     
-    # and then submit it
+    # Then submit it
     sbatch apptainer_batch.sh
    
