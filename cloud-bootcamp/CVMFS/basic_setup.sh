@@ -18,3 +18,6 @@ CVMFS_CLIENT_PROFILE=single
 CVMFS_QUOTA_LIMIT=10000 # Adjust this value according to the storage space on the VM
 CVMFS_HTTP_PROXY="http://cvmfs-cache.arbutus.cloud.computecanada.ca:3128;DIRECT"
 EOF
+
+sudo cvmfs_config setup
+
