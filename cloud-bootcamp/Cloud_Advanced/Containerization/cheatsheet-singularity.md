@@ -1,5 +1,6 @@
 
-On the Alliance systems (e.g Cedar, Graham, etc.), Singularity is already installed and set up for users. So just module load it. 
+# Singularity Basics
+1. Installlation.  On the Alliance systems (e.g Cedar, Graham, etc. or any system with CVMFS mounted), Singularity is already installed and set up for users. So just module load it. 
 ```
   # Load the module
   module load singularity
@@ -22,7 +23,7 @@ On the Alliance systems (e.g Cedar, Graham, etc.), Singularity is already instal
   (e.g. salloc --account=def-erming --nodes=1)
 ```
 
-Singularity basic operations
+2. Singularity basic operations
 ```
   # Pull an exiting image from Singularity repo
   singularity pull shub://singularityhub/hello-world
