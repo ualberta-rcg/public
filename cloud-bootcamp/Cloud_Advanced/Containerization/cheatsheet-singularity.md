@@ -35,7 +35,7 @@ Singularity basic operations
   # Run a container
     # Option A, run the image file directly
     ./hello-world_latest.sif
-    # Option B, use singluarity/apptainer to run 
+    # Option B, use singluarity to run 
     singularity run hello-world_latest.sif
     
     # Run a command from inside the container
@@ -60,8 +60,8 @@ Singularity basic operations
 
   # Build an image from sandbox
   singularity build --sandbox /tmp/debian docker://debian:latest
-  singularity exec --writable /tmp/debian apt-get install python
-  singularity build /tmp/debian2.sif /tmp/debian
+  singularity exec --writable /tmp/debian touch myfile
+  singularity build /tmp/debian.sif /tmp/debian
 
 
   # Daemonize it (run at the backend as a daemon)
@@ -91,7 +91,6 @@ Singularity basic operations
     #SBATCH -t 0-00:30
     #SBATCH -c 1
     #SBATCH --mem=4000
-    
     # Perform some tasks, e.g., 
     singularity exec hello-world_latest.sif cat /etc/os-release
 
