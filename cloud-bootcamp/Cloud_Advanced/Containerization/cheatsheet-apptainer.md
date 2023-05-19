@@ -1,7 +1,7 @@
 
-# Apptainer/Singularity basics
-1. Install or load Apptainer. 
-
+# Apptainer Basics
+1. Installation 
+   
    Note, on Alliance systems (e.g Cedar, Graham, etc. or any cloud VM with CVMFS mounted), Apptainer is available in the modules. So we just need to `module load` it. 
 ```
   # Load the module
