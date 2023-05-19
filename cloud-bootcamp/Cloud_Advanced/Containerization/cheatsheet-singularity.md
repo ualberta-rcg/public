@@ -68,7 +68,7 @@ Singularity basic operations
   singularity instance start ./hello-world_latest.sif hello-world
   singularity instance list
   singularity instance stop hello-world
-
+```
   # To Access GPU
    
     # switch to a compute node by using salloc (Note it's not recommended to run Singuarity from a login node)
@@ -98,4 +98,4 @@ Singularity basic operations
     sbatch sigularity_batch.sh
    
 
-```
+
