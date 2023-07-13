@@ -46,13 +46,16 @@ config  custom  easybuild  gentoo  new_repository  nix
  $ module update
 ```
 
-7, Some software may not have been modulized, such as some AI/ML ones. To access those software, here is an example of the setup:
+7, Some software may not have been modulized, such as some AI/ML ones. To access those software, here is an example of how to access them (e.g. PyTorch):
 ```
+#Load python first if doesn't exist
 module load StdEnv/2020
 module load python/3.9.6
 python3 -m venv myenv
 source myenv/bin/activate
 avail_wheels
+
+#Install PyTorch with pip
 pip install --no-index torch torchvision torchtext torchaudio
 ```
 (For more details, refer to: https://docs.alliancecan.ca/wiki/PyTorch)
