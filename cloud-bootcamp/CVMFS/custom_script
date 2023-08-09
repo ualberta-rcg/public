@@ -22,4 +22,4 @@ CVMFS_QUOTA_LIMIT=45000 # Adjust this value according to the storage space on th
 CVMFS_HTTP_PROXY="http://scache01.srv.ualberta.ca:3128|http://scache02.srv.ualberta.ca:3128;http://cvmfs-cache.arbutus.cloud.computecanada.ca:3128;DIRECT"  #Recommended to use a local squid (CVMFS caching service)
 EOF
 
-
+sudo cvmfs_config setup
