@@ -17,13 +17,15 @@ config  custom  easybuild  gentoo  new_repository  nix
 * If you don't have the environment module installed yet,
 * On Redhat/CentOS: 
 
-`$ yum -y install environment-modules`
+`$ sudo yum -y install environment-modules`
 
 * Or on Ubuntu/Debian: 
 
-`$ apt-get update; apt-get -y install environment-modules`
+`$ sudo apt-get update; apt-get -y install environment-modules`
 
 * And then source the setup script:
+
+!!! Important: Switch to a regular user account to run the following script (As it's disabled to run modules as root for security concerns)
 
 `$ source /cvmfs/soft.computecanada.ca/config/profile/bash.sh`
 
