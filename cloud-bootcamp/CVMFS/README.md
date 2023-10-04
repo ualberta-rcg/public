@@ -62,6 +62,6 @@ pip install --no-index torch torchvision torchtext torchaudio
 ```
 (For more details, refer to: https://docs.alliancecan.ca/wiki/PyTorch)
 
-8, Hint: for a cloud VM, you can also enable it via the Dashboard during the VM creation:
+8, Hint: for a cloud VM, you can also enable CVMFS via the Dashboard during the VM creation:
   ![Alt Install_CVMFS_on_your_VM](https://user-images.githubusercontent.com/73720293/97760381-a80ae600-1ac8-11eb-904f-5861c93d6bd8.png)
 
