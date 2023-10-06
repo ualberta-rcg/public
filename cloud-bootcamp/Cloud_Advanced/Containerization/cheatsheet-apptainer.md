@@ -17,7 +17,7 @@
   # show your own id and group info
   id 
   #change to /project/YOUR_DEFAULT_GROUP_ID/YOUR_USERNAME
-  cd /project/`id |awk -vRS=',' '/def-/{print}' |awk -F'(' '{print $1}'`/`whoami`
+  cd /project/`id |awk -vRS=',' '/def-/{print}' | head -1 | awk -F'(' '{print $1}'`/`whoami`
   (e.g. cd /project/6001146/erming)
   
   # check the current work directory
@@ -38,7 +38,7 @@
     ls
 
   # Run a container
-    # Option A, run the image file directly
+    # Option A, run the (container image) file directly to perform its function
     ./hello-world_latest.sif
     # Option B, use singluarity/apptainer to run 
     apptainer run hello-world_latest.sif
@@ -49,10 +49,10 @@
 
     # Bind/Mount host directories, e.g.,
     apptainer exec -B /opt hello-world_latest.sif sh
-    Singularity> ls /opt
+       Apptainer> ls /opt
     # comparing to 
     apptainer exec hello-world_latest.sif sh
-    Singularity> ls /opt
+       Apptainer> ls /opt
 
   # Start a shell from the container image
   apptainer shell hello-world_latest.sif
