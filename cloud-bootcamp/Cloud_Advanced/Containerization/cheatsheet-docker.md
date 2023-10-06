@@ -5,8 +5,9 @@
      yum-config-manager   --add-repo   https://download.docker.com/linux/centos/docker-ce.repo
      yum -y install docker-ce
      
-     systemctl start docker
      systemctl enable docker
+     systemctl start docker
+     
      ```
    - On other OSes/flavors, refer to: https://docs.docker.com/engine/install/
 
@@ -36,7 +37,7 @@
        whoami
        ls
        uptime
-       ls /bin
+       du -sh
        exit
        
    # Rename a container
@@ -90,14 +91,18 @@
        docker export myweb > /tmp/myweb-ei.tar
        ls /tmp/myweb-ei.tar
 
-       # Create an image by importing from a tar ball
+       # Transfer the image tar ball to the destination host, e.g.,
+         ##scp /tmp/myweb-ei.tar DEST_HOST:/path/to/somewhere
+       # Then, create an image by importing from the tar ball
        cat /tmp/myweb-ei.tar | docker import - myweb-ei:v1  # v1 is an tag (or version#) to be added to the image
+
        # Create a container from the image
        docker run -d -P --name myweb-ei myweb-ei:v1 sleep 300 & 
        # Run a shell and check the processes running in the container. 
        docker exec -it myweb-ei sh
          # Need to install ps 
-         # apt update & apt install procps
+         # apt update 
+         # apt install procps
          # ps -ef
 
     # Method B, Save/Load an image
@@ -107,7 +112,9 @@
        # Save an image into tar ball file
        docker save -o /tmp/myweb-sl.tar myweb
 
-       # On the destination, load an image from the saved tarball, 
+       # Transfer the image tar ball to the destination host, e.g.,
+         ##scp /tmp/myweb-sl.tar DEST_HOST:/path/to/somewhere
+       # On the destination host, load an image from the saved tarball, 
        docker load -i /tmp/myweb-sl.tar  #load an image from a tar ball
        docker run -d -P --name myweb-sl myweb:v1
        docker port myweb-sl
@@ -115,10 +122,10 @@
        # Run a shell and check the processes running in the container. 
        docker exec -it myweb-sl sh
          # Need to install ps 
-         # apt update & apt install procps
+         # apt update
+         # apt install procps
          # ps -ef
-         
-   (Now we can see the difference between mehtod A and B to see the difference)
+   (Now we can see the difference between mehtod A and B. )
        
    5) Customize and upload an image
       #If image is not loaded yet
