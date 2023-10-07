@@ -70,11 +70,13 @@
   # Build an image from sandbox
     # create a sandbox from an image
     apptainer build --sandbox /tmp/debian docker://debian:latest 
-    # make some changes to the sandbox
-    apptainer exec --writable /tmp/debian touch myfile 
+    # make some changes to the sandbox, eg.
+    touch /data 
     # build a new image 
-    apptainer build /tmp/mydebian.sif /tmp/debian 
-
+    apptainer build mydebian.sif /tmp/debian
+    # create a container from the new image and see the change from inside the container
+    apptainer exec mydebian.sif sh
+    Apptainer> ls /
 
   # Daemonize it (run at the backend as a daemon)
     apptainer instance start ./hello-world_latest.sif hello-world
