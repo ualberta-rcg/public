@@ -100,10 +100,10 @@
        docker run -d -P --name myweb-ei myweb-ei:v1 sleep 300 & 
        # Run a shell and check the processes running in the container. 
        docker exec -it myweb-ei sh
-         # Need to install ps 
-         # apt update 
-         # apt install procps
-         # ps -ef
+         # (Here we need to install ps, see below) 
+         apt update
+         apt install procps
+         ps -ef
 
     # Method B, Save/Load an image
        # Stop a container and save/commit the changes to an image
@@ -121,10 +121,10 @@
        curl http://localhost:<port>
        # Run a shell and check the processes running in the container. 
        docker exec -it myweb-sl sh
-         # Need to install ps 
-         # apt update
-         # apt install procps
-         # ps -ef
+         # (Here we need to install ps, see below) 
+         apt update
+         apt install procps
+         ps -ef
    (Now we can see the difference between mehtod A and B. )
        
    5) Customize and upload an image
