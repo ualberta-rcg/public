@@ -2,11 +2,11 @@
 
    - On Linux, for Redhat/Centos/Fedora:
      ```
-     yum-config-manager   --add-repo   https://download.docker.com/linux/centos/docker-ce.repo
-     yum -y install docker-ce
+     sudo yum-config-manager   --add-repo   https://download.docker.com/linux/centos/docker-ce.repo
+     sudo yum -y install docker-ce
      
-     systemctl enable docker
-     systemctl start docker
+     sudo systemctl enable docker
+     sudo systemctl start docker
      
      ```
    - On other OSes/flavors, refer to: https://docs.docker.com/engine/install/
