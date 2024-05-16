@@ -63,7 +63,7 @@
    # Run nginx container interactively
      docker run -it nginx
      # Type Ctrl-C to exit
-   # Run nginx in detached mode and generate ports automatically
+   # Run nginx in daemon mode and generate ports automatically
      docker run -d -P --name myweb nginx
      docker port myweb
      curl http://localhost:[PORT#], e.g, curl http://localhost:32768
