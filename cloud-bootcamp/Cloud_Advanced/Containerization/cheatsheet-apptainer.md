@@ -104,7 +104,7 @@
     apptainer instance stop hello-world
   ```
 
-  # To Access GPU (on Alliance system, e.g. Cedar)
+  # To Access GPU (on an Alliance system, e.g. Cedar)
 
     # switch to a compute node by using salloc (Note it's not recommended to run Singuarity from a login node)
     salloc --gres=gpu:1 --mem 1000 -n 4 -t 60 --nodes=1 --account=def-erming
@@ -116,7 +116,7 @@
     # Check the GPU info
     Apptainer> nvidia-smi
     
-  # To submit a slurm job  (on Alliance system, e.g. Cedar)
+  # To submit a slurm job  (on an Alliance system, e.g. Cedar)
     # Create a job script and name it apptainer_batch.sh
     
     bash -c 'cat > apptainer_batch.sh' << EOF
