@@ -73,12 +73,15 @@
     ls
 
     id
-    (or from the host `apptainer exec hello-world_latest.sif id`)
-    uid=30xxxx(erming) gid=30xxxx(erming) groups=30xxxx(erming),60xxxx(def-erming)
+    #(or from the host `apptainer exec hello-world_latest.sif id`)
+    # The output should be something like: uid=30xxxx(erming) gid=30xxxx(erming) groups=30xxxx(erming),60xxxx(def-erming)
 
     # comparing to docker:
-    docker run busybox id 
-    uid=0(root) gid=0(root) groups=0(root),10(wheel)
+    docker run busybox  
+    id 
+    # The output should be something like: uid=0(root) gid=0(root) groups=0(root),10(wheel)
+ 
+  # From the above comparison, we can see the key difference of the user/id between Apptainer and Docker
 
   # Build an image from sandbox
     # create a sandbox from an image
