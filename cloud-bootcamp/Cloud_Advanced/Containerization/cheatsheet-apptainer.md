@@ -9,25 +9,28 @@
 ```
   # Load the module
   module load apptainer
+
+  # (Only on Alliance) 
+      # However if you haven't yet load the standard environmental modules, you should do it prior to Apptainer
+      module load CcEnv StdEnv/2023
   
-  # However if you haven't yet load the standard environmental modules, you should do it prior to Apptainer
-  module load CcEnv StdEnv/2023
+      # Note that on Alliance systems, /home is not allowed for submitting jobs so we change the work directory to /project/ACCOUNT_ID/USERNAME. 
+      # Hint, simply run "id" it will show the default account name/ID for you (e.g. def-xxxx(#######)).
+      # show your own id and group info
+      id 
+
+      #change to /project/YOUR_DEFAULT_GROUP_ID/YOUR_USERNAME (e.g. cd /project/6001146/erming), or run directly the following command:
+      cd /project/`id |awk -vRS=',' '/def-/{print}' | head -1 | awk -F'(' '{print $1}'`/`whoami`
+     
   
-  # Note that on Alliance systems, it's not recommended to run Apptainer on the login nodes so better do it on a compute node with the interactive mode using "salloc".
-  # Moreover, /home is not allowed for submitting jobs so we change the work directory to /project/ACCOUNT_ID/USERNAME. 
-  # Hint, simply run "id" it will show the default account name/ID for you (e.g. def-xxxx(#######)).
+      # check the current work directory
+      pwd 
+
+      # It's not recommended to run Apptainer on the login nodes so you'd better do it on a compute node with the interactive mode using "salloc", with the following parameters:
+      # salloc --account=YOUR_DEFAULT_ACCOUNT_NAME --nodes=1
+      # (e.g. salloc --account=def-erming --nodes=1)
+      # Replace --account value with your own Allocation Account
  
-  # show your own id and group info
-  id 
-  #change to /project/YOUR_DEFAULT_GROUP_ID/YOUR_USERNAME
-  cd /project/`id |awk -vRS=',' '/def-/{print}' | head -1 | awk -F'(' '{print $1}'`/`whoami`
-  (e.g. cd /project/6001146/erming)
-  
-  # check the current work directory
-  pwd 
-  
-  salloc --account=YOUR_DEFAULT_ACCOUNT_NAME --nodes=1
-  (e.g. salloc --account=def-erming --nodes=1)
 ```
 
 2. Apptainer basic operations
@@ -43,6 +46,7 @@
   # Run a container
     # Option A, run the (container image) file directly to perform its function
     ./hello-world_latest.sif
+
     # Option B, use singluarity/apptainer to run 
     apptainer run hello-world_latest.sif
     
@@ -53,6 +57,7 @@
     # Bind/Mount host directories, e.g.,
     apptainer exec -B /opt hello-world_latest.sif sh
        Apptainer> ls /opt
+
     # comparing to 
     apptainer exec hello-world_latest.sif sh
        Apptainer> ls /opt
@@ -67,16 +72,19 @@
     uid=30xxxx(erming) gid=30xxxx(erming) groups=30xxxx(erming),60xxxx(def-erming)
 
     # comparing to docker:
-    $ docker run busybox id 
+    docker run busybox id 
     uid=0(root) gid=0(root) groups=0(root),10(wheel)
 
   # Build an image from sandbox
     # create a sandbox from an image
-    apptainer build --sandbox /tmp/debian docker://debian:latest 
+    apptainer build --sandbox /tmp/debian docker://debian:latest
+
     # make some changes to the sandbox, eg.
-    touch /data 
+    touch /data
+ 
     # build a new image 
     apptainer build mydebian.sif /tmp/debian
+
     # create a container from the new image and see the change from inside the container
     apptainer exec mydebian.sif sh
     Apptainer> ls /
