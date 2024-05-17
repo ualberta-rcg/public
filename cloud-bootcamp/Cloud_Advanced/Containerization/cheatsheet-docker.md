@@ -23,6 +23,9 @@
    CMD ["-D", "FOREGROUND"]
    ENTRYPOINT ["/usr/sbin/httpd"]
    ```
+   #To use the Dockerfile, e.g.
+   #docker build -t IMAGE:tag /path/to/Dockerfile.
+   docker build -t centos-httpd:latest ./
 
 3. Docker common operations:
    ```
