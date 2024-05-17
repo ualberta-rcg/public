@@ -11,7 +11,20 @@
      ```
    - On other OSes/flavors, refer to: https://docs.docker.com/engine/install/
 
-1. Docker common operations:
+1. An example of a Dockerfile
+   ```
+   FROM centos:7
+   MAINTAINER Erming Pei <erming@ualberta.ca>
+
+   RUN yum -y install httpd
+   RUN echo "Dockerfile Test on Aapche httpd" > /var/www/html/index.html
+
+   EXPOSE 80
+   CMD ["-D", "FOREGROUND"]
+   ENTRYPOINT ["/usr/sbin/httpd"]
+   ```
+
+3. Docker common operations:
    ```
    1) Basics
    # Run a container directly
