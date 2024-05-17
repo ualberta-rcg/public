@@ -5,6 +5,11 @@
    
    - Note, on Alliance systems (e.g Cedar, Graham, etc. or any cloud VM with CVMFS mounted), Apptainer is available in the modules. So we just need to `module load` it.
 
+   - To run Apptainer as a non-root user, also need to install apptainer-suid
+     ```
+     sudo yum install apptainer-suid
+     ```
+
 1. Load Apptainer
 ```
   # Load the module
