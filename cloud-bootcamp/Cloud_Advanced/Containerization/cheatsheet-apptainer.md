@@ -9,7 +9,7 @@
   module load apptainer
   
   # However if you haven't yet load the standard environmental modules, you should do it prior to Apptainer
-  module load CcEnv StdEnv/2020
+  module load CcEnv StdEnv/2023
   
   # Note that on Alliance systems, it's not recommended to run Apptainer on the login nodes so better do it on a compute node with the interactive mode using "salloc".
   # Moreover, /home is not allowed for submitting jobs so we change the work directory to /project/ACCOUNT_ID/USERNAME. 
