@@ -106,6 +106,9 @@
 
   # To Access GPU (on an Alliance system, e.g. Cedar)
 
+    #change to /project/YOUR_DEFAULT_GROUP_ID/YOUR_USERNAME (e.g. cd /project/6001146/erming), or run directly the following command:
+      cd /project/`id |awk -vRS=',' '/def-/{print}' | head -1 | awk -F'(' '{print $1}'`/`whoami`
+
     # switch to a compute node by using salloc (Note it's not recommended to run Singuarity from a login node)
     salloc --gres=gpu:1 --mem 1000 -n 4 -t 60 --nodes=1 --account=def-erming
     (#if there is not an image yet, run: singularity pull shub://singularityhub/hello-world)
