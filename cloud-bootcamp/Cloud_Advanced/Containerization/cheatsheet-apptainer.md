@@ -135,5 +135,6 @@
     EOF
     
     # Then submit it
-    sbatch apptainer_batch.sh
+    sbatch --account=def-erming apptainer_batch.sh
+    (Note: You need to replace the --account value to your own Allocation Account)
    
