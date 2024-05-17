@@ -1,8 +1,9 @@
 
 # Apptainer Basics
 1. Installation 
+   - To install Apptainer, please refer to https://apptainer.org/docs/admin/main/installation.html
    
-   Note, on Alliance systems (e.g Cedar, Graham, etc. or any cloud VM with CVMFS mounted), Apptainer is available in the modules. So we just need to `module load` it. 
+   - Note, on Alliance systems (e.g Cedar, Graham, etc. or any cloud VM with CVMFS mounted), Apptainer is available in the modules. So we just need to `module load` it. 
 ```
   # Load the module
   module load apptainer
