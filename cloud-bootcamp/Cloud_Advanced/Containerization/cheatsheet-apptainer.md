@@ -80,7 +80,6 @@
     docker run busybox  
     id 
     # The output should be something like: uid=0(root) gid=0(root) groups=0(root),10(wheel)
- 
   # From the above comparison, we can see the key difference of the user/id between Apptainer and Docker
 
   # Build an image from sandbox
@@ -88,7 +87,9 @@
     apptainer build --sandbox /tmp/debian docker://debian:latest
 
     # make some changes to the sandbox, eg.
-    touch /data
+    cd /tmp/debian
+    touch mytestfile
+    ls
  
     # build a new image 
     apptainer build mydebian.sif /tmp/debian
