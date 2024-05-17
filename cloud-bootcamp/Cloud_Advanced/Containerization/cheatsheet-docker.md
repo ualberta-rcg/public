@@ -105,7 +105,7 @@
       docker cp myweb:/etc/motd .
       cat ./motd
       
-   4) Move container from one host to another
+   4) Migrate a container from one host to another
     # Method A, Export/Import a container
       # Export a container to a tar ball
        docker export myweb > /tmp/myweb-ei.tar
