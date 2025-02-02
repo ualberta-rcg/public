@@ -8,15 +8,15 @@ In order to run Openstack/Heat commands, we need to set up the computing environ
 
 1. Install python3 and pip (Note: pip is a plugin of python. Once you get python installed, you will be able to use pip).
 
-  - On CentOS Linux :
+  - On Redhat/CentOS/Almalinux/Rockylinux:
 
-    `yum install python3`
+    `sudo yum install python3`
     
   - On Ubuntu:
    
-    `apt-get update`
+    `sudo apt-get update`
     
-    `apt-get install python3`
+    `sudo apt-get install python3`
     
   - On Mac OS:
   
@@ -29,23 +29,19 @@ In order to run Openstack/Heat commands, we need to set up the computing environ
   - On Windows, you need a termial with ssh client installed, or I will guide you to use the web based options so you can skip the python/etc installations.
 
 
-2. Use PIP to install python-openstackclient and python-heatclient
+2. Set up Virtual env (a sandbox with a specific version python and dependencies)
+    ```
+    python3 -m venv myenv
+    source myenv/bin/activate
+    ```
+   
+3. Use pip to install python-openstackclient and python-heatclient
 
     ```
     pip3 install python-openstackclient
     pip3 install python-heatclient
     ```
-
-3. (Optional) If you found some software/library conflicts with existing ones on your OS, you may use virtualenv to set up a virtual environment, by running:
-
-    ```
-    python3 -m venv guest5xxenv 
-    source guest5xxenv/bin/activate
-    ```
-   From where you can run the above commands safely. 
-
-   (To quit the virtual env, you may run `deactivate`)
-  
+    
 4.  Download the Openstack client setup script from Arbutus
 
     1. Log on to https://arbutus.cloud.computecanada.ca/
@@ -53,17 +49,17 @@ In order to run Openstack/Heat commands, we need to set up the computing environ
     3. In the drop-down menu, click on "Openstack RC file V3"
     4. A def-training-cloudbootcamp.sh file will be downloaded to your computer
  
-4. Source the downloaded guestxxx-openrc.sh file on your computer to set up your Openstack client:
+5. Source the downloaded guestxxx-openrc.sh file on your computer to set up your Openstack client:
 
     `source def-training-cloud-openrc.sh`
     
-5. Verify the client env with running:
+6. Verify the client env with running:
 
     `openstack stack list`
     
    If now errors it means your openstack client env is correctly set up. 
    
-6. Check Openstack resources such as flavors, images, network, security group, key, etc.
+7. Check Openstack resources such as flavors, images, network, security group, key, etc.
    Basically you can run "openstack -h|grep list" to retrieve all the listing commands, such as:
    
    ```
@@ -74,13 +70,13 @@ In order to run Openstack/Heat commands, we need to set up the computing environ
    openstack security group list
    ```
    
-7. Create a key pair for Heat
+8. Create a key pair for Heat
    ```
    openstack keypair create guest5XX_keypair > guest5xx_key.priv
    chmod 400 guest5xx_key.priv
    ```
    
-8. Create your first Heat template, e.g.:
+9. Create your first Heat template, e.g.:
    ```
    heat_template_version: 2015-04-30
 
@@ -100,7 +96,7 @@ In order to run Openstack/Heat commands, we need to set up the computing environ
    ```
    Save it as a file with an extension .yaml (e.g.: simple.yaml)
    
- 9. Create your first stack with the template:
+ 10. Create your first stack with the template:
  
     Syntax:
     
@@ -110,7 +106,7 @@ In order to run Openstack/Heat commands, we need to set up the computing environ
     
     `openstack stack create -t simple.yaml guest500_stack`
      
-10. Check the stack status:
+11. Check the stack status:
     
     `openstack stack show guest500_stack`
     
@@ -119,11 +115,11 @@ In order to run Openstack/Heat commands, we need to set up the computing environ
     `opensteack stack resource list`
     `openstack stack resource show STACK_NAME RESOURCE_NAME`
 
-11. Example 2: create an nginx based web server
+12. Example 2: create an nginx based web server
     
     `openstack stack create -t nginx.yaml guest500_stack`
     
-12. To update a stack after applied some changes to the template:
+13. To update a stack after applied some changes to the template:
   
     `openstack stack update -t HEAT_TEMPLATE STACK_NAME`
    
@@ -135,7 +131,7 @@ In order to run Openstack/Heat commands, we need to set up the computing environ
     Note: The above yaml files can be found on github under `public/cloud-bootcamp/Cloud_Advanced` .
 
     
-13. Other Heat (or stack) operations:
+14. Other Heat (or stack) operations:
   
     ```
     # To suspend a stack
