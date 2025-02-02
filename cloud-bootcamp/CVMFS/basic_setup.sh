@@ -1,4 +1,4 @@
-# For Redhat/Centos
+# For Redhat/Centos/AlmaLinux/RockyLinux
 sudo yum -y install https://ecsft.cern.ch/dist/cvmfs/cvmfs-release/cvmfs-release-latest.noarch.rpm
 sudo yum -y install cvmfs cvmfs-config-default cvmfs-auto-setup
 
