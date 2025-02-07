@@ -18,7 +18,7 @@
         # Load the module
         module load apptainer
       
-        # (The following steps are only necessary on an Alliance system) 
+        # *** The following steps are only necessary on an Alliance system ***
             # However if you haven't yet load the standard environmental modules, you should do it prior to Apptainer
             module load CcEnv StdEnv/2023
         
