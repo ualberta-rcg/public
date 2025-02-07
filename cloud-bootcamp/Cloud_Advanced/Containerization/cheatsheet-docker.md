@@ -170,7 +170,7 @@
          ps -ef
    (Now we can see the difference between mehtod A and B. )
        
-   5) Customize and upload an image
+   5) Customize and upload an image to the DockerHub
       #If image is not loaded yet
       docker search IMAGE_NAME
       docker pull CONTAINER IMAGE_NAME:TAG
