@@ -98,7 +98,7 @@
     apptainer build mydebian.sif /tmp/debian
 
     # create a container from the new image and see the change from inside the container
-    apptainer exec mydebian.sif sh
+    apptainer run mydebian.sif
     Apptainer> ls /
 
   # Daemonize it (run at the backend as a daemon)
