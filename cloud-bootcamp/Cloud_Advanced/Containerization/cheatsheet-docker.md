@@ -1,4 +1,4 @@
-0. To install docker:
+0. Install docker and set up non-root user:
 
    - On Linux, for Redhat/Centos/Fedora:
      ```
@@ -7,26 +7,36 @@
      
      sudo systemctl enable docker
      sudo systemctl start docker
-     
+     ```
+
+   - To run docker as a non-root user
+     ```
+     sudo usermod -aG docker $USER
+     logout
+
+     (and then login again)
      ```
    - On other OSes/flavors, refer to: https://docs.docker.com/engine/install/
 
-1. An example of a Dockerfile
+0. An example of a Dockerfile
    ```
-   FROM centos:7
-   MAINTAINER Erming Pei <erming@ualberta.ca>
+   FROM ubuntu:latest
 
-   RUN yum -y install httpd
-   RUN echo "Dockerfile Test on Aapche httpd" > /var/www/html/index.html
+   LABEL maintainer="John Doe <john.doe@example.com>"
+
+   RUN apt update && apt install -y apache2 && rm -rf /var/lib/apt/lists/*
+
+   RUN echo "Dockerfile Test on Apache httpd" > /var/www/html/index.html
 
    EXPOSE 80
-   CMD ["-D", "FOREGROUND"]
-   ENTRYPOINT ["/usr/sbin/httpd"]
+
+   ENTRYPOINT ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
+
    ```
    #To use the Dockerfile, e.g.
-   #docker build -t IMAGE:tag /path/to/Dockerfile.
+   #docker build -t IMAGE:tag  dir_Dockerfile.
    ```
-   docker build -t centos-httpd:latest ./
+   docker  build  -t  ubuntu-web:latest  ./
    ```
 
 3. Docker common operations:
