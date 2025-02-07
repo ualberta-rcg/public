@@ -13,30 +13,32 @@
      ```
      sudo usermod -aG docker $USER
      logout
-
-     (and then login again)
      ```
+     (and then login again)
+
    - On other OSes/flavors, refer to: https://docs.docker.com/engine/install/
 
 0. An example of a Dockerfile
    ```
-   FROM ubuntu:latest
+   # Use the official lightweight Nginx image
+   FROM nginx:latest
 
-   LABEL maintainer="John Doe <john.doe@example.com>"
+   # Copy a custom HTML file to the web root
+   #COPY index.html /usr/share/nginx/html/
 
-   RUN apt update && apt install -y apache2 && rm -rf /var/lib/apt/lists/*
-
-   RUN echo "Dockerfile Test on Apache httpd" > /var/www/html/index.html
-
+   # Expose port 80
    EXPOSE 80
 
-   ENTRYPOINT ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
+   # Start Nginx
+   CMD ["nginx", "-g", "daemon off;"]
 
    ```
-   #To use the Dockerfile, e.g.
-   #docker  build  -t  IMAGE:tag   dir_Dockerfile.
+   #To use the Dockerfile, e.g.:
+
+   #docker  build  -t  IMAGE:tag   dir_Dockerfile
    ```
-   docker  build  -t  ubuntu-web:latest  ./
+   docker  build  -t  myweb:1.0  .
+   docker run -d -p 80:80 myweb:1.0
    ```
 
 3. Docker common operations:
