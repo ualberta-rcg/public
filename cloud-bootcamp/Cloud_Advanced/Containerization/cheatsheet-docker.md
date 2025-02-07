@@ -34,7 +34,7 @@
 
    ```
    #To use the Dockerfile, e.g.
-   #docker build -t IMAGE:tag  dir_Dockerfile.
+   #docker  build  -t  IMAGE:tag   dir_Dockerfile.
    ```
    docker  build  -t  ubuntu-web:latest  ./
    ```
