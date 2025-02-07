@@ -114,7 +114,7 @@
 
     # switch to a compute node by using salloc (Note it's not recommended to run Singuarity from a login node)
     salloc --gres=gpu:1 --mem 1000 -n 4 -t 60 --nodes=1 --account=def-erming
-    (#if there is not an image yet, run: singularity pull shub://singularityhub/hello-world)
+    (#if there is not an image yet, run: apptainer pull shub://singularityhub/hello-world)
 
     # Access GPU with the --nv option 
     apptainer exec --nv hello-world_latest.sif /bin/bash
@@ -131,7 +131,7 @@
     #SBATCH -o apptainer_test.out
     #SBATCH -e apptainer_test.err
     #SBATCH -t 0-00:30
-    #SBATCH -c 1
+    #SBATCH -c 2
     #SBATCH --mem=4000
     # Perform some tasks, e.g., 
     apptainer exec hello-world_latest.sif cat /etc/os-release
