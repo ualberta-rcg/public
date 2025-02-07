@@ -1,42 +1,45 @@
 
 # Apptainer Basics
-0. Installation 
+1. Installation 
    - To install Apptainer, please refer to https://apptainer.org/docs/admin/main/installation.html
-   
-   - Note, on Alliance systems (e.g Cedar, Graham, etc. or any cloud VM with CVMFS mounted), Apptainer is available in the modules. So we just need to `module load` it.
-
+     On Redhat/CentOS/Almalinux/Fedora/Rocklinux, run:
+     ```
+     sudo dnf install -y epel-release
+     sudo dnf install -y apptainer
+     ```
    - To run Apptainer as a non-root user, also need to install apptainer-suid
      ```
-     sudo yum install apptainer-suid
+     sudo dnf install apptainer-suid
      ```
+   
+   - Note, on Alliance systems (e.g Cedar, Graham, etc. or any cloud VM with CVMFS mounted), Apptainer is available in the modules. So we just need to `module load` it. See below:
 
-1. Load Apptainer
-```
-  # Load the module
-  module load apptainer
-
-  # (The following are only necessary on an Alliance system) 
-      # However if you haven't yet load the standard environmental modules, you should do it prior to Apptainer
-      module load CcEnv StdEnv/2023
-  
-      # Note that on Alliance systems, /home is not allowed for submitting jobs so we change the work directory to /project/ACCOUNT_ID/USERNAME. 
-      # Hint, simply run "id" it will show the default account name/ID for you (e.g. def-xxxx(#######)).
-      # show your own id and group info
-      id 
-
-      #change to /project/YOUR_DEFAULT_GROUP_ID/YOUR_USERNAME (e.g. cd /project/6001146/erming), or run directly the following command:
-      cd /project/`id |awk -vRS=',' '/def-/{print}' | head -1 | awk -F'(' '{print $1}'`/`whoami`
-     
-  
-      # check the current work directory
-      pwd 
-
-      # It's not recommended to run Apptainer on the login nodes so you'd better do it on a compute node with the interactive mode using "salloc", with the following parameters:
-      # salloc --account=YOUR_DEFAULT_ACCOUNT_NAME --nodes=1
-      # (e.g. salloc --account=def-erming --nodes=1)
-      # Replace --account value with your own Allocation Account
- 
-```
+      ```
+        # Load the module
+        module load apptainer
+      
+        # (The following steps are only necessary on an Alliance system) 
+            # However if you haven't yet load the standard environmental modules, you should do it prior to Apptainer
+            module load CcEnv StdEnv/2023
+        
+            # Note that on Alliance systems, /home is not allowed for submitting jobs so we change the work directory to /project/ACCOUNT_ID/USERNAME. 
+            # Hint, simply run "id" it will show the default account name/ID for you (e.g. def-xxxx(#######)).
+            # show your own id and group info
+            id 
+      
+            #change to /project/YOUR_DEFAULT_GROUP_ID/YOUR_USERNAME (e.g. cd /project/6001146/erming), or run directly the following command:
+            cd /project/`id |awk -vRS=',' '/def-/{print}' | head -1 | awk -F'(' '{print $1}'`/`whoami`
+           
+        
+            # check the current work directory
+            pwd 
+      
+            # It's not recommended to run Apptainer on the login nodes so you'd better do it on a compute node with the interactive mode using "salloc", with the following parameters:
+            # salloc --account=YOUR_DEFAULT_ACCOUNT_NAME --nodes=1
+            # (e.g. salloc --account=def-erming --nodes=1)
+            # Replace --account value with your own Allocation Account
+       
+      ```
 
 2. Apptainer basic operations
   ```
