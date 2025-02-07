@@ -39,6 +39,7 @@
    ```
    docker  build  -t  myweb:1.0  .
    docker run -d -p 80:80 myweb:1.0
+   curl localhost:80
    ```
 
 3. Docker common operations:
