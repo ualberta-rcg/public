@@ -80,7 +80,7 @@
     # The output should be something like: uid=30xxxx(erming) gid=30xxxx(erming) groups=30xxxx(erming),60xxxx(def-erming)
 
     # comparing to docker:
-    docker run busybox  
+    docker exec -it CONTAINER /bin/sh  
     id 
     # The output should be something like: uid=0(root) gid=0(root) groups=0(root),10(wheel)
   # From the above comparison, we can see the key difference of the user/id between Apptainer and Docker
