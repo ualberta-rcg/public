@@ -42,4 +42,4 @@ We'll update this page with a new date. Significant changes will be communicated
 
 ## Contact Us
 
-For privacy concerns or data requests, email **research.support@ualberta.ca**.
+For privacy concerns or data requests, email **research dot support at ualberta dot ca**.
