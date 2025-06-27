@@ -37,4 +37,4 @@ We may update these Terms. If changes are material, you’ll be notified. Contin
 
 ## Contact
 
-For questions regarding these Terms, email **research.support@ualberta.ca**.
+For questions regarding these Terms, email **research dot support at ualberta dot ca**.
