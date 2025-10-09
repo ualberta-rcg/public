@@ -1,6 +1,6 @@
 0. Install docker and set up non-root user:
 
-   - On Linux, for Redhat/Centos/Fedora:
+   - On Linux, for Redhat/Centos/Fedora/Almalinux/Rockylinux:
      ```
      sudo yum-config-manager   --add-repo   https://download.docker.com/linux/centos/docker-ce.repo
      sudo yum -y install docker-ce
