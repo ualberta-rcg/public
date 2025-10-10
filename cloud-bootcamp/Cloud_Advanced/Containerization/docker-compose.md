@@ -237,3 +237,21 @@ curl http://localhost:8080
 - Remove stopped containers, unused images, networks
 
    ```docker system prune```
+
+8. Other useful commands:
+
+| Command                                    | Description                                                                                                                                           |
+| ------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `docker compose attach <service>`          | Attach your terminal to a running service’s main process (like `docker attach` but for a Compose service). Use `Ctrl + p, Ctrl + q` to detach safely. |
+| `docker compose exec <service> <command>`  | Run a command inside a running container (e.g., `docker compose exec web bash`).                                                                      |
+| `docker compose run <service> <command>`   | Run a one-off command in a new container based on a service (useful for migrations, debugging).                                                       |
+| `docker compose restart [service]`         | Restart one or all services.                                                                                                                          |
+| `docker compose stop [service]`            | Stop one or all running services without removing containers.                                                                                         |
+| `docker compose start [service]`           | Start already created (but stopped) containers.                                                                                                       |
+| `docker compose build [service]`           | Build or rebuild service images from the `Dockerfile`.                                                                                                |
+| `docker compose pull`                      | Pull service images from a registry.                                                                                                                  |
+| `docker compose push`                      | Push built images to a registry.                                                                                                                      |
+| `docker compose config`                    | Validate and view the final, merged Compose configuration.                                                                                            |
+| `docker compose cp <src> <service>:<dest>` | Copy files between the local machine and a service container.                                                                                         |
+| `docker compose top`                       | Show processes running inside your Compose containers.                                                                                                |
+
