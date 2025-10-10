@@ -112,8 +112,6 @@ CMD ["python", "app.py"]
 
 docker-compose.yml
 ```
-version: "3.9"
-
 services:
   web:
     build: ./app              # Build from app/Dockerfile
@@ -151,116 +149,91 @@ Test it:
 curl http://localhost:8080
 ```
 
+```
+```
 
 ==== Commonly used docker compose commands ====
 
 1. Starting and managing containers
    
-▶️ Start all services
-```docker compose up```
+- Start all services
 
-Builds images (if needed) and starts all containers.
+   ```docker compose up```
 
-Runs them in the foreground (shows logs).
+2. Start in the background (detached mode)
 
+   ```docker compose up -d```
 
-▶️ Start in the background (detached mode)
-```docker compose up -d```
-Starts everything in the background.
+3. Rebuild and restart
 
-You can continue using your terminal.
+   ```docker compose up -d --build```
 
-👉 Most common command during development.
+2. Stopping and cleaning up
+- Stop running containers
 
-🔄 Rebuild and restart
-docker compose up -d --build
+   ```docker compose stop```
 
+3. Stop and remove everything
 
-Forces Docker to rebuild images from the Dockerfile.
+   ```docker compose down```
 
-Useful after changing code or dependencies.
+- Remove everything including named volumes
 
-🧹 2. Stopping and cleaning up
-🛑 Stop running containers
-docker compose stop
+   ```docker compose down -v```
 
+4. Inspecting and monitoring
 
-Stops containers but keeps them (and their data) around.
+- List all running services
 
-❌ Stop and remove everything
-docker compose down
+   ```docker compose ps```
 
+- View logs
 
-Stops containers
+   ```docker compose logs```
 
-Removes them, networks, and default volumes.
+   - Add a service name to filter:
 
-💣 Remove everything including named volumes
-docker compose down -v
+       ```docker compose logs -f web```
 
+5. Managing services individually
 
-Also removes data volumes → fresh start.
+- Start one service
 
-⚠️ Be careful — this deletes your DB data if you use volumes!
+   ```docker compose up -d web```
 
-🔍 3. Inspecting and monitoring
-📋 List all running services
-docker compose ps
+- Stop one service
 
+   ```docker compose stop db```
 
-Shows something like:
+- Restart a service
 
-NAME               COMMAND                  STATUS          PORTS
-myapp-web-1        "python app.py"          Up 3 minutes    0.0.0.0:8080->5000/tcp
-myapp-db-1         "docker-entrypoint.s…"   Up 3 minutes    5432/tcp
+   ```docker compose restart web```
 
-📜 View logs
-docker compose logs
+- Rebuild a service’s image
 
+   ```docker compose build web```
 
-or follow live logs:
+6. Working with containers directly
 
-docker compose logs -f
+- Run a command inside a service
 
+   ```docker compose exec web bash```
 
-Add a service name to filter:
+  or 
 
-docker compose logs -f web
-
-🔁 4. Managing services individually
-🔧 Start one service
-docker compose up -d web
-
-🚫 Stop one service
-docker compose stop db
-
-🔄 Restart a service
-docker compose restart web
-
-🔨 Rebuild a service’s image
-docker compose build web
-
-💾 5. Working with containers directly
-🧠 Run a command inside a service
-docker compose exec web bash
+   ```docker compose exec web sh```
 
 
-or if the container doesn’t have Bash:
+- Run a one-off command without entering
 
-docker compose exec web sh
+  ```docker compose run web python --version```
 
+7. Misc utilities
+   
+- List all volumes created
 
-→ You’re now inside the running container (useful for debugging).
+   ```docker volume ls```
 
-🧮 Run a one-off command without entering
-docker compose run web python --version
+- Remove stopped containers, unused images, networks
 
-
-Runs a new temporary container for that command only.
-
-⚙️ 6. Misc utilities
-📦 List all volumes created
-docker volume ls
-
-🧼 Remove stopped containers, unused images, networks
-docker system prune
+   ```docker system prune```
